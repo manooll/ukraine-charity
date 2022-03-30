@@ -2,17 +2,35 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { $Contact, $FormContainer, $Form, $Title, $Label, $Input, $Textarea, $Submit, $Error } from './contact.styled';
 import { Container } from '../components/container';
+import axios from 'axios';
+
+const API_PATH = `${window.location.href}contact-form/api/contact/index.php`;
 
 export const Contact = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+  const [ mailSent, setMailSent ] = useState('');
+  const [ formError, setFormError ] = useState('');
   const [ inputList ] = useState([
     {element: 'input', label: 'Email', type: 'email', placeholder: 'mail@gmail.com', required: true},
     {element: 'input', label: 'Name', type: 'text', placeholder: '', required: true},
     {element: 'input', label: 'Phone', type: 'text', placeholder: '+1', required: true},
     {element: 'textarea', label: 'Message', type: '', placeholder: 'Enter your message', required: false},
   ]);
+
+  const onSubmit = (data) => {
+    axios({
+      method: 'post',
+      url: `${API_PATH}`,
+      headers: { 'content-type': 'application/json' },
+      data,
+    })
+    .then(result => {
+      setMailSent(result.data.sent);
+      reset();
+    })
+    .catch(error => setFormError(error.message));
+  };
 
   return (
     <$Contact id='contact'>
@@ -35,6 +53,7 @@ export const Contact = () => {
                 <$Label>
                   <span>{label}</span>
                   <$Textarea
+                    {...register(label)}
                     placeholder={placeholder}
                     label={label}
                     rows='5'

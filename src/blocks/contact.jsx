@@ -19,17 +19,7 @@ export const Contact = () => {
   ]);
 
   const onSubmit = (data) => {
-    axios({
-      method: 'post',
-      url: `${API_PATH}`,
-      headers: { 'content-type': 'application/json' },
-      data,
-    })
-    .then(result => {
-      setMailSent(result.data.sent);
-      reset();
-    })
-    .catch(error => setFormError(error.message));
+    console.log(data);
   };
 
   return (

@@ -132,10 +132,9 @@ export class Donation extends React.Component {
                   <$Smalltitle>your donation will help</$Smalltitle>
                   <$List>
                     {this.state.list.map(({ value, isActive }, index) => (
-                      <>
+                      <React.Fragment key={`${value}_${index}`}>
                         {typeof value === 'number' ? (
                           <$ListItem
-                            key={index}
                             isActive={isActive}
                             onClick={() => this.onChange(index)}
                           >
@@ -143,14 +142,13 @@ export class Donation extends React.Component {
                           </$ListItem>
                         ) : (
                           <$ListItem
-                            key={index}
                             isActive={isActive}
                             onClick={() =>this.onToggleInput(index)}
                           >
                             {value}
                           </$ListItem>
                         )}
-                      </>
+                      </React.Fragment>
                     ))}
                   </$List>
                   {this.state.isInputShown && (

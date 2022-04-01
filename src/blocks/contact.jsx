@@ -26,10 +26,10 @@ export const Contact = () => {
         <$FormContainer>
           <$Title>Contact Us</$Title>
           <$Form onSubmit={handleSubmit(onSubmit)}>
-            {Object.keys(errors).length > 0 && <$Error>Fill required inputs</$Error>}
+            {errors.message && <$Error>Fill out required inputs</$Error>}
               {/* Email */}
               <$Label>
-                <span>Email *</span>
+                <span>Email*</span>
                 <$Input
                   {...register('email', { required: true })}
                   placeholder='mail@gmail.com'
@@ -40,7 +40,7 @@ export const Contact = () => {
 
               {/* Name */}
               <$Label>
-                <span>Name *</span>
+                <span>Name*</span>
                 <$Input
                   {...register('userName', { required: true })}
                   type='text'
@@ -50,7 +50,7 @@ export const Contact = () => {
 
               {/* Phone */}
               <$Label>
-                <span>Phone *</span>
+                <span>Phone*</span>
                 <$Input
                   {...register('phone', { required: true })}
                   placeholder='+1'

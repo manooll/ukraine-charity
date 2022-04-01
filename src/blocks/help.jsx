@@ -24,7 +24,7 @@ export const Help = () => {
           </$Left>
           <$Right>
             <$List>
-              {list.map(({ icon, text, index }) => (
+              {list.map(({ icon, text }, index) => (
                 <$ListItem key={index}>
                   <$Icon icon={icon} />
                   <$Text>{text}</$Text>

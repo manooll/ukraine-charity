@@ -1,21 +1,20 @@
 import styled from 'styled-components';
 import logo from '../assets/img/global-aid.svg';
 import logoBlue from '../assets/img/global-aid-blue.svg';
-import pulse from '../assets/img/header-pulse.svg';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 import { Link } from 'react-scroll';
 
 export const $Header = styled.div`
-  position: ${({ sticky }) => sticky ? 'fixed' : 'absolute'};
+  position: ${({ sticky }) => sticky === 'true' ? 'fixed' : 'absolute'};
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10000;
   overflow-x: hidden;
-  height: ${({ active }) => active ? '100%' : 'auto'};
-  background: ${({ sticky }) => sticky ? Colors.white : '#015BBB'};
-  box-shadow: ${({ sticky }) => sticky ? '0 1px 2px rgba(0, 0, 0, .15)' : 'none'};
+  height: ${({ active }) => active === 'true' ? '100%' : 'auto'};
+  background: ${({ sticky }) => sticky === 'true' ? Colors.white : '#015BBB'};
+  box-shadow: ${({ sticky }) => sticky === 'true' ? '0 1px 2px rgba(0, 0, 0, .15)' : 'none'};
 
   :after {
     content: '';
@@ -25,27 +24,20 @@ export const $Header = styled.div`
     width: 100%;
     height: 2px;
     background: #737AD1;
-    display: ${({ sticky, active }) => sticky || active ? 'none' : 'block'};
+    display: ${({ sticky, active }) => sticky === 'true' || active === 'true' ? 'none' : 'block'};
   }
 
   @media ${device.tabletL} {
     height: auto;
-    background: ${({ sticky }) => sticky ? Colors.white : 'transparent'};
+    background: ${({ sticky }) => sticky === 'true' ? Colors.white : 'transparent'};
 
     :after {
       top: auto;
       bottom: 0;
-      display: ${({ sticky }) => sticky ? 'none' : 'block'};
+      display: ${({ sticky }) => sticky === 'true' ? 'none' : 'block'};
     }
   }
 `;
-
-// bottom: -17px;
-// height: 42px;
-// background: url(${pulse});
-// background-size: contain;
-// background-position: 30% 0;
-// background-repeat: repeat-x;
 
 export const $HeaderWrap = styled.div`
   padding: 10px 0;
@@ -73,7 +65,7 @@ export const $Toggle = styled.div`
   position: relative;
   width: 20px;
   height: 2px;
-  background: ${({ sticky }) => sticky ? Colors.black : Colors.white};
+  background: ${({ sticky }) => sticky === 'true' ? Colors.black : Colors.white};
 
   :before,
   :after {
@@ -103,7 +95,7 @@ export const $ToggleClose = styled.div`
   width: 32px;
   height: 32px;
   border-radius: 32px;
-  background: ${({ sticky }) => sticky ? 'transparent' : 'rgba(255, 255, 255, .5)'};
+  background: ${({ sticky }) => sticky === 'true' ? 'transparent' : 'rgba(255, 255, 255, .5)'};
 
   :before,
   :after {
@@ -111,7 +103,7 @@ export const $ToggleClose = styled.div`
     position: absolute;
     width: 20px;
     height: 2px;
-    background: ${({ sticky }) => sticky ? Colors.black : Colors.blue};
+    background: ${({ sticky }) => sticky === 'true' ? Colors.black : Colors.blue};
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -135,7 +127,7 @@ export const $Navigation = styled.div`
   left: 0;
   top: 61px;
   height: calc(100vh - 61px);
-  transform: ${({ active }) => active ? 'translateX(0)' : 'translateX(100%)'};
+  transform: ${({ active }) => active === 'true' ? 'translateX(0)' : 'translateX(100%)'};
 
   a {
     display: flex;
@@ -167,7 +159,7 @@ export const $Navigation = styled.div`
 export const $Logo = styled.div`
   width: 146px;
   height: 34px;
-  background-image: url(${({ sticky }) => sticky ? logoBlue : logo});
+  background-image: url(${({ sticky }) => sticky === 'true' ? logoBlue : logo});
   background-size: contain;
   background-repeat: no-repeat;
 
@@ -198,7 +190,7 @@ export const $ListItem = styled(Link)`
   position: relative;
   padding: 20px 10px;
   color: ${Colors.white};
-  font-weight: ${(props) => props.active ? 700 : 600};
+  font-weight: ${({ active }) => active === 'true' ? 700 : 600};
   z-index: 10;
   font-size: 18px;
   max-width: 300px;
@@ -223,18 +215,18 @@ export const $ListItem = styled(Link)`
     padding: 8px 10px;
     max-width: auto;
     margin: 0;
-    color: ${({ sticky }) => sticky ? Colors.black : Colors.white};
+    color: ${({ sticky }) => sticky === 'true' ? Colors.black : Colors.white};
     treansition: .2s ease-in;
 
     :hover {
-      color: ${({ sticky }) => sticky ? Colors.blue : Colors.yellow};
+      color: ${({ sticky }) => sticky === 'true' ? Colors.blue : Colors.yellow};
     }
 
     :after {
-      bottom: ${({ sticky }) => sticky ? '-26.5px' : '-23.5px'};
+      bottom: ${({ sticky }) => sticky === 'true' ? '-26.5px' : '-23.5px'};
       background-color: ${(props) => {
-        if (props.active) {
-          return props.sticky ? Colors.blue : Colors.yellow;
+        if (props.active === 'true') {
+          return props.sticky === 'true' ? Colors.blue : Colors.yellow;
         }
         return 'transparent';
       }};

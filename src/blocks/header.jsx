@@ -60,34 +60,34 @@ export const Header = () => {
 
   return (
     <$Header
-      active={menuActive}
-      sticky={isSticky}
+      active={menuActive.toString()}
+      sticky={isSticky.toString()}
     >
       <Container>
         <$HeaderWrap>
-          <$Logo sticky={isSticky} />
+          <$Logo sticky={isSticky.toString()} />
           <$ToggleWrap
             onClick={() => toggleMenuActive(!menuActive)}
           >
             {menuActive ? (
               <$ToggleClose
-                sticky={isSticky}
+                sticky={isSticky.toString()}
               />
             ) : (
               <$Toggle
-                sticky={isSticky}
+                sticky={isSticky.toString()}
               />
             )}
           </$ToggleWrap>
           <$Navigation
-            active={menuActive}
+            active={menuActive.toString()}
           >
             <$List>
               {list.map(({ title, isActive, scrollToElement }, index) => (
                 <$ListItem
                   key={index}
-                  active={isActive}
-                  sticky={isSticky}
+                  active={isActive.toString()}
+                  sticky={isSticky.toString()}
                   to={scrollToElement}
                   onClick={() => handleNavigate(index)}
                   smooth={true}

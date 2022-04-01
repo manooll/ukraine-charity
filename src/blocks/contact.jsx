@@ -77,7 +77,6 @@ export const Contact = () => {
                 {errors.phone?.message}
               </$Error>
             </$Label>
-            
 
             {/* Message */}
             <$Label>

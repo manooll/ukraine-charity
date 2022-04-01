@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0d5136fc.css",
-    "main.js": "/static/js/main.09bd07b1.js",
+    "main.js": "/static/js/main.b1326c0c.js",
     "static/media/banner-bg.png": "/static/media/banner-bg.7f6606d714d19da40f9f.png",
     "static/media/approach.png": "/static/media/approach.96a70d4520f85495482a.png",
     "static/media/support.png": "/static/media/support.d30e09b7eb46bc9cc98e.png",
@@ -23,10 +23,10 @@
     "static/media/scrolling.svg": "/static/media/scrolling.3e72c24fcbb71912fbb635881a7c7ad4.svg",
     "static/media/header-pulse.svg": "/static/media/header-pulse.7829e69c2dd3a9d7b2143092127f907a.svg",
     "main.0d5136fc.css.map": "/static/css/main.0d5136fc.css.map",
-    "main.09bd07b1.js.map": "/static/js/main.09bd07b1.js.map"
+    "main.b1326c0c.js.map": "/static/js/main.b1326c0c.js.map"
   },
   "entrypoints": [
     "static/css/main.0d5136fc.css",
-    "static/js/main.09bd07b1.js"
+    "static/js/main.b1326c0c.js"
   ]
 }

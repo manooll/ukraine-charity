@@ -12,7 +12,7 @@ export const Timing = () => {
             <$Title>The timing and what can you do to help?</$Title>
             <$Icon />
             <$Description>
-              Time is of the essence. We are seeing devastating situation on the ground in the Ukraine. We are on daily calls during which folks from the Ukraine have to stop the calls and run to bomb shelters. 
+              Time is of the essence. We are seeing devastating situation on the ground in Ukraine. We are on daily calls during which folks from Ukraine have to stop the calls and run to bomb shelters. 
             </$Description>
             <$Smalltitle>We need to act now!</$Smalltitle>
             <$Description>

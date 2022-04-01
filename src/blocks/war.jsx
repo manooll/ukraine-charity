@@ -18,7 +18,7 @@ export const War = () => {
               The war in the Ukraine, which we have all been watching unfolding on our TV screens, <span>is affecting families, children, cities and countries. </span>
             </$Description>
             <$Description>
-              While we have been in touch with families in Ukraine and have been trying our best to assist with both dollars and connections, we feel at this time we must do more to address the growing humanitarian crisis.
+              While we have been in touch with families in Ukraine and have been assisting with funds and connections, we feel at this time we must do more to address the growing humanitarian crisis.
             </$Description>
             <Link
               to='donation'

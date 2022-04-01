@@ -8,10 +8,10 @@ import mask from '../assets/img/mask.svg';
 
 export const Help = () => {
   const [ list ] = useState([
-    { icon: shipped, text: 'Logistics (movement of products and refugee transportation)' },
+    { icon: shipped, text: 'Logistics (movement of supplies and refugee transportation)' },
     { icon: treatment, text: 'Medical supplies and medical equipment' },
     { icon: doctor, text: 'Help for medical personnel and hospitals' },
-    { icon: mask, text: 'Personal protective gear for medical staff (bullet proof vests, etc.)' },
+    { icon: mask, text: 'Personal protective equipment and safety gear for medical staff' },
   ]);
 
   return (
@@ -20,7 +20,7 @@ export const Help = () => {
         <$HelpWrap>
           <$Left>
             <$Smalltitle>HOW CAN I HELP?</$Smalltitle>
-            <$Title>Some of the current and immediate projects we are working on:</$Title>
+            <$Title>Our current and immediate humanitarian projects:</$Title>
           </$Left>
           <$Right>
             <$List>

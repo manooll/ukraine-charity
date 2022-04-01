@@ -114,10 +114,6 @@ export const $PaypalForm = styled.div`
     font-size: 15px;
   }
 
-  > label span {
-    top: -32px;
-  }
-
   > div:last-child {
     display: flex;
     justify-content: center;
@@ -169,6 +165,11 @@ export const $ListItem = styled.li`
   height: 49px;
   box-sizing: border-box;
   letter-spacing: -1px;
+  transition: .1s ease-in;
+
+  :hover {
+    background: ${({ isActive }) => isActive ? 'transparent': '#D5E9FA'};
+  }
 
   @media ${device.tabletL} {
 

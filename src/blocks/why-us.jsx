@@ -8,8 +8,8 @@ export const WhyUs = () => {
     <$WhyUs id='why-us'>
       <$Left>
         <$Title>Why us and why now?</$Title>
-        <$Description>Our team includes five global business executives and a medical doctor. All six of us are naturalized US citizens with common history, language and strong connections with the Ukrainian people. We have all had successful careers and spent years in project execution, procurement, logistics and working with teams globally and in Ukraine.</$Description>
-        <$Description><span>Seeing the continuing crisis in the region, we believe the time to act is now!</span> We know that our funds, pooled together with contribution from all of you, will allow us to make immediate and significant impact.</$Description>
+        <$Description>Global Aid Foundation was founded by five executives and a medical doctor, who are naturalized US citizens, and who have deep connections with Ukrainian people, Ukrainian history, language and beliefs. We have all had successful careers and spent years in project execution, procurement, logistics and working with teams globally and in Ukraine.</$Description>
+        <$Description>Seeing the continuing crisis in Ukraine, we believe NOW is the time to act! We know that our funds as well as your kind contributions will allow us to make an immediate and significant impact and save lives.</$Description>
         <Link
           to='donation'
           smooth={true}

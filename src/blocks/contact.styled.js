@@ -34,7 +34,7 @@ export const $Form = styled.form`
   flex-direction: column;
 `;
 
-export const $Label = styled.label`
+export const $Label = styled.div`
   position: relative;
   margin-bottom: 24px;
 

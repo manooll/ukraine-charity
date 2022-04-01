@@ -71,28 +71,37 @@ export const $ListItem = styled(Link)`
   :hover {
     color: ${Colors.yellow};
   }
+
+  :last-child {
+    color: ${Colors.yellow};
+    font-weight: 700;
+  }
+
+  :last-child:hover {
+    color: ${Colors.blue};
+  }
 `;
 
 export const $Right = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 157px;
+  max-width: 227px;
 
-  > a {
+  > a,
+  > span {
     font-size: 14px;
     color: ${Colors.white};
-    font-weight: bold;
-    text-decoration: none;
-    margin-bottom: 10px;
-
-    :hover {
-      color: ${Colors.yellow};
-    }
-  }
-
-  > a:last-child {
     font-weight: normal;
     opacity: .6;
-    margin-top: 10px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+
+  > a:hover {
+    color: ${Colors.yellow};
+  }
+
+  @media ${device.tabletL} {
+    max-width: 157px;
   }
 `;

@@ -35,11 +35,12 @@ export const Footer = () => {
             </$List>
           </$Nav>
           <$Right>
-            <a href="tel:+11234567890">+1 123 4567890</a>
-            <a href="tel:+11239876543">+1 123 9876543</a>
-            <a target="_blank" href="https://www.google.com/maps/search/New+York,+Loft+Pie,+22+Pink+Street/@40.8724068,-74.0461456,17z/data=!3m1!4b1">
-              New York, Loft Pie, 22 Pink Street
+            <a target="_blank" href="https://www.google.com/maps/place/503+Washington+Ave+%232c,+Newtown,+PA+18940,+%D0%A1%D0%A8%D0%90/@40.2291181,-74.9306173,17z/data=!3m1!4b1!4m5!3m4!1s0x89c154f334f3e707:0x285dd94510e9cccc!8m2!3d40.2291181!4d-74.9284286">
+              503 E Washington Ave Ste. 2C, Newtown, PA. 18940
             </a>
+            <span>
+              © Global Aid Foundation Inc
+            </span>
           </$Right>
         </$FooterWrap>
       </Container>

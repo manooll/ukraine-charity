@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { $Contact, $FormContainer, $Form, $Title, $Label, $Input, $Textarea, $Submit, $Error } from './contact.styled';
@@ -24,7 +24,6 @@ export const Contact = () => {
           <$Title>Contact Us</$Title>
           <$Form onSubmit={handleSubmit(onSubmit)} id='contact-form'>
             {/* Email */}
-            {console.log(errors)};
             <$Label>
               <span>Email*</span>
               <$Input

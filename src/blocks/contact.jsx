@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { $Contact, $FormContainer, $Form, $Title, $Label, $Input, $Textarea, $Submit, $Error } from './contact.styled';
 import { Container } from '../components/container';
-import axios from 'axios';
-
-const API_PATH = `${window.location.href}contact-form/api/contact/index.php`;
 
 export const Contact = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();

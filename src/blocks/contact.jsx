@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 import { $Contact, $FormContainer, $Form, $Title, $Label, $Input, $Textarea, $Submit, $Error } from './contact.styled';
 import { Container } from '../components/container';
 
@@ -8,15 +9,15 @@ export const Contact = () => {
 
   const [ mailSent, setMailSent ] = useState('');
   const [ formError, setFormError ] = useState('');
-  const [ inputList ] = useState([
-    {element: 'input', label: 'Email', type: 'email', placeholder: 'mail@gmail.com', required: true},
-    {element: 'input', label: 'Name', type: 'text', placeholder: '', required: true},
-    {element: 'input', label: 'Phone', type: 'text', placeholder: '+1', required: true},
-    {element: 'textarea', label: 'Message', type: '', placeholder: 'Enter your message', required: false},
-  ]);
 
   const onSubmit = (data) => {
-    console.log(data);
+    emailjs.sendForm('service_qzf5icb', 'template_8jeujdp', data, 'Hqx5vnKbFE08R4iHv')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.error(JSON.stringify(error));
+      });
+    reset();
   };
 
   return (
@@ -26,28 +27,49 @@ export const Contact = () => {
           <$Title>Contact Us</$Title>
           <$Form onSubmit={handleSubmit(onSubmit)}>
             {Object.keys(errors).length > 0 && <$Error>Fill required inputs</$Error>}
-            {inputList.map(({ element, label, type, placeholder, required }) => (
-              element === 'input' ? (
-                <$Label>
-                  <span>{label}</span>
-                  <$Input
-                    {...register(label, { required })}
-                    placeholder={placeholder}
-                    type={type}
-                  />
-                </$Label>
-              ) : (
-                <$Label>
-                  <span>{label}</span>
-                  <$Textarea
-                    {...register(label)}
-                    placeholder={placeholder}
-                    label={label}
-                    rows='5'
-                  />
-                </$Label>
-              )
-            ))}
+              {/* Email */}
+              <$Label>
+                <span>Email *</span>
+                <$Input
+                  {...register('email', { required: true })}
+                  placeholder='mail@gmail.com'
+                  type='email'
+                  name='email'
+                />
+              </$Label>
+
+              {/* Name */}
+              <$Label>
+                <span>Name *</span>
+                <$Input
+                  {...register('userName', { required: true })}
+                  type='text'
+                  name='userName'
+                />
+              </$Label>
+
+              {/* Phone */}
+              <$Label>
+                <span>Phone *</span>
+                <$Input
+                  {...register('phone', { required: true })}
+                  placeholder='+1'
+                  type='text'
+                  name='phone'
+                />
+              </$Label>
+
+              {/* Message */}
+              <$Label>
+                <span>Message</span>
+                <$Textarea
+                  {...register('message')}
+                  placeholder='Enter your message'
+                  label='message'
+                  name='message'
+                  rows='5'
+                />
+              </$Label>
             <$Submit type='submit' value='Send message' />
           </$Form>
         </$FormContainer>

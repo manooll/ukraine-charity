@@ -36,6 +36,7 @@ export const $Form = styled.form`
 
 export const $Label = styled.label`
   position: relative;
+  margin-bottom: 24px;
 
   > span {
     position: absolute;
@@ -67,7 +68,6 @@ const FormField = `
   padding: 18px 16px;
   border-radius: 8px;
   border: 1px solid #BEC1C4;
-  margin-bottom: 24px;
   box-sizing: border-box;
 
   :placeholder {
@@ -124,11 +124,12 @@ export const $Submit = styled.input`
   }
 `;
 
-export const $Error = styled.div`
+export const $Error = styled.small`
+  display: inline-block;
   color: #C92519;
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 5px;
 
   @media ${device.tabletL} {
 

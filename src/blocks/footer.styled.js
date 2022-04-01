@@ -5,7 +5,7 @@ import footer from '../assets/img/footer-bg.png';
 import { device } from '../assets/styles/media-query';
 import { Link } from 'react-scroll';
 
-export const $Footer = styled.div`
+export const FooterBlock = styled.div`
   padding: 81px 10px 29px;
   background: url(${footer});
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@ export const $Footer = styled.div`
   }
 `;
 
-export const $FooterWrap = styled.div`
+export const FooterWrap = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -28,7 +28,7 @@ export const $FooterWrap = styled.div`
   }
 `;
 
-export const $Logo = styled.div`
+export const Logo = styled.div`
   width: 181px;
   height: 44px;
   background-image: url(${logo});
@@ -37,16 +37,16 @@ export const $Logo = styled.div`
   margin-bottom: 16px;
 `;
 
-export const $Left = styled.div`
+export const Left = styled.div`
   > a {
     font-size: 14px;
     color: ${Colors.yellow};
   }
 `;
 
-export const $Nav = styled.div``;
+export const Nav = styled.div``;
 
-export const $List = styled.div`
+export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 16.395498vw;
@@ -62,7 +62,7 @@ export const $List = styled.div`
   }
 `;
 
-export const $ListItem = styled(Link)`
+export const ListItem = styled(Link)`
   cursor: pointer;
   color: ${Colors.white};
   font-size: 14px;
@@ -82,7 +82,7 @@ export const $ListItem = styled(Link)`
   }
 `;
 
-export const $Right = styled.div`
+export const Right = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 227px;

@@ -4,7 +4,7 @@ import timing from '../assets/img/timing.png';
 import pulse from '../assets/img/pulse-timing.svg';
 import { device } from '../assets/styles/media-query';
 
-export const $Help = styled.div`
+export const TimingBlock = styled.div`
   padding: 44px 0 17px;
 
   @media ${device.tabletL} {
@@ -12,7 +12,7 @@ export const $Help = styled.div`
   }
 `;
 
-export const $HelpWrap = styled.div`
+export const TimingWrap = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -21,7 +21,7 @@ export const $HelpWrap = styled.div`
   }
 `;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   margin: 26px 0 15px;
   font-size: 24px;
   font-weight: 600;
@@ -33,7 +33,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $Smalltitle = styled.h3`
+export const SmallTitle = styled.h3`
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ export const $Smalltitle = styled.h3`
   }
 `;
 
-export const $Icon = styled.div`
+export const Icon = styled.div`
   background: url(${pulse});
   background-repeat: no-repeat;
   background-size: contain;
@@ -61,7 +61,7 @@ export const $Icon = styled.div`
   }
 `;
 
-export const $Description = styled.div`
+export const Description = styled.div`
   font-size: 14px;
   line-height: 20px;
   margin: 0 0 24px;
@@ -77,7 +77,7 @@ export const $Description = styled.div`
   }
 `;
 
-export const $Left = styled.div`
+export const Left = styled.div`
   width: 88vw;
   height: 47.286667vw;
   background: url(${timing});
@@ -96,7 +96,7 @@ export const $Left = styled.div`
   }
 `;
 
-export const $Right = styled.div`
+export const Right = styled.div`
   padding: 0 8px;
 
   @media ${device.tabletL} {

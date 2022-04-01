@@ -5,7 +5,7 @@ import scrolling from '../assets/img/scrolling.svg';
 import pulse from '../assets/img/pulse.svg';
 import { device } from '../assets/styles/media-query';
 
-export const $Banner = styled.div`
+export const BannerBlock = styled.div`
   height: 100vh;
   max-height: -webkit-fill-available;
   background-color: ${Colors.blue};
@@ -15,7 +15,7 @@ export const $Banner = styled.div`
   color: ${Colors.white};
 `;
 
-export const $BannerWrap = styled.div`
+export const BannerWrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ export const $BannerWrap = styled.div`
   max-height: -webkit-fill-available;
 `;
 
-export const $Pulse = styled.div`
+export const Pulse = styled.div`
   width: 40px;
   height: 24px;
   background-image: url(${pulse});
@@ -39,7 +39,7 @@ export const $Pulse = styled.div`
   }
 `;
 
-export const $Title = styled.h1`
+export const Title = styled.h1`
   font-size: 40px;
   font-weight: bold;
   margin: 0 0 10px;
@@ -54,7 +54,7 @@ export const $Title = styled.h1`
   }
 `
 
-export const $Subtitle = styled.small`
+export const Subtitle = styled.small`
   display: inline-block;
   font-size: 16px;
   max-width: 450px;
@@ -71,7 +71,7 @@ export const $Subtitle = styled.small`
   }
 `;
 
-export const $MouseScroll = styled.div`
+export const MouseScroll = styled.div`
   cursor: pointer;
   position: absolute;
   width: 32px;

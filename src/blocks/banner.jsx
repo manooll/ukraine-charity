@@ -1,19 +1,19 @@
 import React from 'react';
-import { $Banner, $Title, $Subtitle, $BannerWrap, $Pulse, $MouseScroll } from './banner.styled';
+import { BannerBlock, BannerWrap, Title, Subtitle, Pulse, MouseScroll } from './banner.styled';
 import { Container } from '../components/container';
 import { Button, ButtonSize, ButtonColor, ButtonType } from '../components/button';
 import { Link } from 'react-scroll';
 
 export const Banner = () => {
   return (
-    <$Banner id='banner'>
+    <BannerBlock id='banner'>
       <Container>
-        <$BannerWrap>
-          <$Title>Help <span>Ukraine!</span></$Title>
-          <$Pulse />
-          <$Subtitle>
+        <BannerWrap>
+          <Title>Help <span>Ukraine!</span></Title>
+          <Pulse />
+          <Subtitle>
             We appreciate <span>your care, help and sensitivity</span> to the urgency of this situation!
-          </$Subtitle>
+          </Subtitle>
           <Link
             to='help'
             smooth={true}
@@ -32,10 +32,10 @@ export const Banner = () => {
             smooth={true}
             duration={1000}
           >
-            <$MouseScroll />
+            <MouseScroll />
           </Link>
-        </$BannerWrap>
+        </BannerWrap>
       </Container>
-    </$Banner>
+    </BannerBlock>
   );
 }

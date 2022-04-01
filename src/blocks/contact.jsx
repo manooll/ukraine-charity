@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { $Contact, $FormContainer, $Form, $Title, $Label, $Input, $Textarea, $Submit, $Error } from './contact.styled';
+import { ContactBlock, FormContainer, Form, Title, Label, Input, Textarea, Submit, Error } from './contact.styled';
 import { Container } from '../components/container';
 
 export const Contact = () => {
@@ -18,15 +18,15 @@ export const Contact = () => {
   };
 
   return (
-    <$Contact id='contact'>
+    <ContactBlock id='contact'>
       <Container>
-        <$FormContainer>
-          <$Title>Contact Us</$Title>
-          <$Form onSubmit={handleSubmit(onSubmit)} id='contact-form'>
+        <FormContainer>
+          <Title>Contact Us</Title>
+          <Form onSubmit={handleSubmit(onSubmit)} id='contact-form'>
             {/* Email */}
-            <$Label>
+            <Label>
               <span>Email*</span>
-              <$Input
+              <Input
                 {...register('email', {
                   required: true,
                   pattern: {
@@ -38,29 +38,29 @@ export const Contact = () => {
                 type='email'
                 name='email'
               />
-              <$Error>
+              <Error>
                 {errors.email?.type === 'required' && 'Email is required'}
                 {errors.email?.message}
-              </$Error>
-            </$Label>
+              </Error>
+            </Label>
 
             {/* Name */}
-            <$Label>
+            <Label>
               <span>Name*</span>
-              <$Input
+              <Input
                 {...register('userName', { required: true })}
                 type='text'
                 name='userName'
               />
-              <$Error>
+              <Error>
                 {errors.userName?.type === 'required' && 'Name is required'}
-              </$Error>
-            </$Label>
+              </Error>
+            </Label>
 
             {/* Phone */}
-            <$Label>
+            <Label>
               <span>Phone*</span>
-              <$Input
+              <Input
                 {...register('phone', {
                   required: true,
                   pattern: {
@@ -72,27 +72,27 @@ export const Contact = () => {
                 type='text'
                 name='phone'
               />
-              <$Error>
+              <Error>
                 {errors.phone?.type === 'required' && 'Phone is required'}
                 {errors.phone?.message}
-              </$Error>
-            </$Label>
+              </Error>
+            </Label>
 
             {/* Message */}
-            <$Label>
+            <Label>
               <span>Message</span>
-              <$Textarea
+              <Textarea
                 {...register('message')}
                 placeholder='Enter your message'
                 label='message'
                 name='message'
                 rows='5'
               />
-            </$Label>
-            <$Submit type='submit' value='Send message' />
-          </$Form>
-        </$FormContainer>
+            </Label>
+            <Submit type='submit' value='Send message' />
+          </Form>
+        </FormContainer>
       </Container>
-    </$Contact>
+    </ContactBlock>
   );
 }

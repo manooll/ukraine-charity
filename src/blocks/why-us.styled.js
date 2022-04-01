@@ -4,7 +4,7 @@ import support from '../assets/img/support.png';
 import yellow from '../assets/img/yellow.svg';
 import { device } from '../assets/styles/media-query';
 
-export const $WhyUs = styled.div`
+export const WhyUsBlock = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -18,7 +18,7 @@ export const $WhyUs = styled.div`
   }
 `;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   margin: 5px 0 17px;
   font-size: 24px;
   font-weight: 600;
@@ -29,7 +29,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $Description = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -54,7 +54,7 @@ export const $Description = styled.p`
   }
 `;
 
-export const $Left = styled.div`
+export const Left = styled.div`
   position: relative;
   padding: 34px 24px;
   background: ${Colors.black};
@@ -85,7 +85,7 @@ export const $Left = styled.div`
   }
 `;
 
-export const $Right = styled.div`
+export const Right = styled.div`
   position: relative;
   min-width: 100%;
   min-height: 100%;

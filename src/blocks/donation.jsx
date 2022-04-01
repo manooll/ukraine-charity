@@ -1,7 +1,7 @@
 import React from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
-import { $Appreciate, $Text,$Donation, $DonationWrap, $Description, $Title, $Smalltitle, $List, $ListItem, $Left, $Right, $PaypalForm } from './donation.styled';
-import { $Label, $Input } from './contact.styled';
+import { Appreciate, Text, DonationBlock, DonationWrap, Description, Title, SmallTitle, List, ListItem, Left, Right, PaypalForm, PaypalInput } from './donation.styled';
+import { Label, Input } from './contact.styled';
 import { Container } from '../components/container';
 
 const initialState = {
@@ -50,15 +50,15 @@ export class Donation extends React.Component {
 
     this.setState({
       amount: updatedAmount,
-      orderID: "",
-      onApproveMessage: "",
-      onErrorMessage: "",
+      orderID: '',
+      onApproveMessage: '',
+      onErrorMessage: '',
       list: updatedList,
       isInputShown: false,
     });
   }
 
-  createOrder(data, actions) {
+  createOrder(_data, actions) {
     return actions.order
       .create({
         purchase_units: [
@@ -75,7 +75,7 @@ export class Donation extends React.Component {
       });
   }
 
-  onApprove(data, actions) {
+  onApprove(_data, actions) {
     let app = this;
     return actions.order.capture().then(function(details) {
       app.setState({
@@ -102,9 +102,9 @@ export class Donation extends React.Component {
     });
 
     this.setState((prevState) => ({
-      orderID: "",
-      onApproveMessage: "",
-      onErrorMessage: "",
+      orderID: '',
+      onApproveMessage: '',
+      onErrorMessage: '',
       list: updatedList,
       isInputShown: !prevState.isInputShown,
     }));
@@ -119,68 +119,95 @@ export class Donation extends React.Component {
   render() {
     return (
       <>
-        <$Donation id='donation'>
+        <DonationBlock id='donation'>
           <Container>
-            <$DonationWrap>
-              <$Left>
-                <$Title>Help to save Ukraine</$Title>
-                <$Description>We have committed hundreds of thousands of dollars to start the fund and would love to see that amount grow with the kind contributions from all of you.</$Description>
-                <$Description>To put it simply — having more funds now will help save lives. Your help with <span>$20, $200, $2000 or $20000</span> will go directly to the causes listed above.</$Description>
-              </$Left>
-              <$Right>
-                <$PaypalForm>
-                  <$Smalltitle>your donation will help</$Smalltitle>
-                  <$List>
+            <DonationWrap>
+              <Left>
+                <Title>Help to save Ukraine</Title>
+                <Description>We have committed hundreds of thousands of dollars to start the fund and would love to see that amount grow with the kind contributions from all of you.</Description>
+                <Description>To put it simply — having more funds now will help save lives. Your help with <span>$20, $200, $2000 or $20000</span> will go directly to the causes listed above.</Description>
+              </Left>
+              <Right>
+                <PaypalForm>
+                  <SmallTitle>your donation will help</SmallTitle>
+                  <List>
                     {this.state.list.map(({ value, isActive }, index) => (
                       <React.Fragment key={`${value}_${index}`}>
                         {typeof value === 'number' ? (
-                          <$ListItem
+                          <ListItem
                             isActive={isActive}
                             onClick={() => this.onChange(index)}
                           >
                             {`$${value}`}
-                          </$ListItem>
+                          </ListItem>
                         ) : (
-                          <$ListItem
+                          <ListItem
                             isActive={isActive}
                             onClick={() =>this.onToggleInput(index)}
                           >
                             {value}
-                          </$ListItem>
+                          </ListItem>
                         )}
                       </React.Fragment>
                     ))}
-                  </$List>
+                  </List>
                   {this.state.isInputShown && (
-                    <$Label>
+                    <Label>
                       <span>Amount</span>
-                      <$Input
-                        type="text"
+                      <Input
+                        type='text'
                         value={this.state.amount}
                         onChange={this.onAmountChange}
-                        name="amount"
+                        name='amount'
                       />
-                    </$Label>
+                    </Label>
                   )}
-                  <PayPalScriptProvider options={{ "client-id": "AZylOv8aUL6Zo9c9SI1BhLlMtTgiuMr8A7ovtcSAqhf3qattWodtfBbwbC09uyXeN1W9pFgEmIRsRTxF" }}>
+
+                  <form
+                    action='https://www.paypal.com/donate'
+                    method='post'
+                    target='_top'
+                  >
+                    <input
+                      type='hidden'
+                      name='hosted_button_id'
+                      value='XSFV948DXGLLG'
+                    />
+                    <PaypalInput
+                      type='submit'
+                      value='Donate'
+                      border='0'
+                      name='submit'
+                      title='PayPal - The safer, easier way to pay online!'
+                    />
+                    <img
+                      alt=''
+                      border='0'
+                      src='https://www.paypal.com/en_US/i/scr/pixel.gif'
+                      width='1'
+                      height='1'
+                    />
+                  </form>
+
+                  {/* <PayPalScriptProvider options={{ "client-id": "AZylOv8aUL6Zo9c9SI1BhLlMtTgiuMr8A7ovtcSAqhf3qattWodtfBbwbC09uyXeN1W9pFgEmIRsRTxF" }}>
                     <PayPalButtons
                       createOrder={this.createOrder}
                       onApprove={this.onApprove}
                       onError={this.onError}
                     />
-                  </PayPalScriptProvider>
-                </$PaypalForm>
-              </$Right>
-            </$DonationWrap>
+                  </PayPalScriptProvider> */}
+                </PaypalForm>
+              </Right>
+            </DonationWrap>
           </Container>
-        </$Donation>
-        <$Appreciate>
+        </DonationBlock>
+        <Appreciate>
           <Container>
-            <$Text>
+            <Text>
               All of us appreciate your care, help and sensitivity to the urgency of this situation!
-            </$Text>
+            </Text>
           </Container>
-        </$Appreciate>
+        </Appreciate>
       </>
     );
   }

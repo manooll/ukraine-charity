@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { $Header, $HeaderWrap, $Toggle, $Navigation, $Logo, $List, $ListItem, $ToggleWrap, $ToggleClose } from './header.styled';
+import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose } from './header.styled';
 import { Button, ButtonSize, ButtonColor, ButtonType } from '../components/button';
 import { Container } from '../components/container';
 import { useEffect } from 'react';
@@ -59,32 +59,32 @@ export const Header = () => {
   }, []);
 
   return (
-    <$Header
+    <HeaderBlock
       active={menuActive.toString()}
       sticky={isSticky.toString()}
     >
       <Container>
-        <$HeaderWrap>
-          <$Logo sticky={isSticky.toString()} />
-          <$ToggleWrap
+        <HeaderWrap>
+          <Logo sticky={isSticky.toString()} />
+          <ToggleWrap
             onClick={() => toggleMenuActive(!menuActive)}
           >
             {menuActive ? (
-              <$ToggleClose
+              <ToggleClose
                 sticky={isSticky.toString()}
               />
             ) : (
-              <$Toggle
+              <Toggle
                 sticky={isSticky.toString()}
               />
             )}
-          </$ToggleWrap>
-          <$Navigation
+          </ToggleWrap>
+          <Navigation
             active={menuActive.toString()}
           >
-            <$List>
+            <List>
               {list.map(({ title, isActive, scrollToElement }, index) => (
-                <$ListItem
+                <ListItem
                   key={index}
                   active={isActive.toString()}
                   sticky={isSticky.toString()}
@@ -94,9 +94,9 @@ export const Header = () => {
                   duration={1000}
                 >
                   {title}
-                </$ListItem>
+                </ListItem>
               ))}
-            </$List>
+            </List>
             <Link
               to='donation'
               smooth={true}
@@ -122,9 +122,9 @@ export const Header = () => {
                 )
               }
             </Link>
-          </$Navigation>
-        </$HeaderWrap>
+          </Navigation>
+        </HeaderWrap>
       </Container>
-    </$Header>
+    </HeaderBlock>
   );
 }

@@ -4,7 +4,7 @@ import blue from '../assets/img/blue.svg';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 
-export const $Video = styled.div`
+export const VideoBlock = styled.div`
   position: relative;
   background: ${Colors.black};
   padding: 49px 0;
@@ -52,10 +52,9 @@ export const $Video = styled.div`
   }
 `;
 
-export const $VideoWrap = styled.div`
-`;
+export const VideoWrap = styled.div``;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   color: ${Colors.white};
   font-size: 24px;
   font-weight: bold;
@@ -67,7 +66,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $IFrame = styled.iframe`
+export const IFrame = styled.iframe`
   position: relative;
   width: 86.9333333333vw;
   height: 48.8vw;

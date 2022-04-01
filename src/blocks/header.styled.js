@@ -5,7 +5,7 @@ import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 import { Link } from 'react-scroll';
 
-export const $Header = styled.div`
+export const HeaderBlock = styled.div`
   position: ${({ sticky }) => sticky === 'true' ? 'fixed' : 'absolute'};
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@ export const $Header = styled.div`
   }
 `;
 
-export const $HeaderWrap = styled.div`
+export const HeaderWrap = styled.div`
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@ export const $HeaderWrap = styled.div`
   }
 `;
 
-export const $ToggleWrap = styled.div`
+export const ToggleWrap = styled.div`
   position: relative;
   right: -13px;
   cursor: pointer;
@@ -61,7 +61,7 @@ export const $ToggleWrap = styled.div`
   align-items: center;
 `;
 
-export const $Toggle = styled.div`
+export const Toggle = styled.div`
   position: relative;
   width: 20px;
   height: 2px;
@@ -90,7 +90,7 @@ export const $Toggle = styled.div`
   }
 `;
 
-export const $ToggleClose = styled.div`
+export const ToggleClose = styled.div`
   position: relative;
   width: 32px;
   height: 32px;
@@ -118,7 +118,7 @@ export const $ToggleClose = styled.div`
   }
 `;
 
-export const $Navigation = styled.div`
+export const Navigation = styled.div`
   display: flex;
   position: absolute;
   width: 100%;
@@ -156,7 +156,7 @@ export const $Navigation = styled.div`
   }
 `;
 
-export const $Logo = styled.div`
+export const Logo = styled.div`
   width: 146px;
   height: 34px;
   background-image: url(${({ sticky }) => sticky === 'true' ? logoBlue : logo});
@@ -169,7 +169,7 @@ export const $Logo = styled.div`
   }
 `;
 
-export const $List = styled.div`
+export const List = styled.div`
   display: flex;
   padding: 0 9px;
 
@@ -185,7 +185,7 @@ export const $List = styled.div`
   }
 `;
 
-export const $ListItem = styled(Link)`
+export const ListItem = styled(Link)`
   cursor: pointer;
   position: relative;
   padding: 20px 10px;

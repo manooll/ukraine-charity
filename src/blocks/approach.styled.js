@@ -4,11 +4,11 @@ import pulse from '../assets/img/pulse-blue.svg';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 
-export const $Approach = styled.div`
+export const ApproachBlock = styled.div`
   background-image: linear-gradient(to bottom right, ${Colors.blue}, #2601BB); 
 `;
 
-export const $ApproachWrap = styled.div`
+export const ApproachWrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ export const $ApproachWrap = styled.div`
   }
 `;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   margin: 5px 0 15px;
   font-size: 24px;
   font-weight: bold;
@@ -42,7 +42,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $Subtitle = styled.div`
+export const Subtitle = styled.div`
   max-width: 754px;
   font-size: 17px;
   line-height: 24px;
@@ -54,7 +54,7 @@ export const $Subtitle = styled.div`
   }
 `;
 
-export const $Smalltitle = styled.h3`
+export const SmallTitle = styled.h3`
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -67,7 +67,7 @@ export const $Smalltitle = styled.h3`
   }
 `;
 
-export const $Description = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 20px;
   margin: 0 0 21px;
@@ -83,12 +83,11 @@ export const $Description = styled.p`
   }
 `;
 
-export const $WeUnderstand = styled.div``;
+export const WeUnderstand = styled.div``;
 
-export const $Top = styled.div`
-`;
+export const Top = styled.div``;
 
-export const $Bottom = styled.div`
+export const Bottom = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -97,7 +96,7 @@ export const $Bottom = styled.div`
   }
 `;
 
-export const $Left = styled.div`
+export const Left = styled.div`
   background: #EDF4FA;
   padding: 39px 24px 18px;
 
@@ -106,7 +105,7 @@ export const $Left = styled.div`
   }
 `;
 
-export const $Right = styled.div`
+export const Right = styled.div`
   min-width: 100%;
   height: 58.6666666667vw;
   background: url(${approach});

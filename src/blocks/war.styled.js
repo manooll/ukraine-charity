@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import war from '../assets/img/war.png';
 import { device } from '../assets/styles/media-query';
 
-export const $War = styled.div`
+export const WarBlock = styled.div`
   padding: 40px 6px;
 
   button {
@@ -11,7 +11,7 @@ export const $War = styled.div`
   }
 `;
 
-export const $WarWrap = styled.div`
+export const WarWrap = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -20,7 +20,7 @@ export const $WarWrap = styled.div`
   }
 `;
 
-export const $WarPic = styled.div`
+export const WarPic = styled.div`
   width: 88vw;
   height: 47.286667vw;
   background: url(${war});
@@ -37,7 +37,7 @@ export const $WarPic = styled.div`
   }
 `;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   margin: 24px 0 14px;
   font-size: 24px;
   font-weight: bold;
@@ -48,7 +48,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $Description = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 20px;
   margin: 0 0 20px;
@@ -68,16 +68,13 @@ export const $Description = styled.p`
   }
 `;
 
-export const $Left = styled.div`
-  
+export const Left = styled.div`
   @media ${device.tabletL} {
     padding: 0 36px 0 50px;
   }
 `;
 
-export const $Right = styled.div`
-  
-
+export const Right = styled.div`
   @media ${device.tabletL} {
     padding: 0 0 0 36px;
   }

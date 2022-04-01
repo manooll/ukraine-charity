@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 
-export const $Help = styled.div`
+export const HelpBlock = styled.div`
   padding: 39px 0;
 
   @media ${device.tabletL} {
@@ -10,7 +10,7 @@ export const $Help = styled.div`
   }
 `;
 
-export const $HelpWrap = styled.div`
+export const HelpWrap = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -19,7 +19,7 @@ export const $HelpWrap = styled.div`
   }
 `;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   margin: 5px 0 24px;
   font-size: 24px;
   line-height: 28px;
@@ -32,7 +32,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $Smalltitle = styled.h3`
+export const SmallTitle = styled.h3`
   font-weight: 600;
   text-transform: uppercase;
   color: ${Colors.blue}; 
@@ -45,12 +45,12 @@ export const $Smalltitle = styled.h3`
   }
 `;
 
-export const $Left = styled.div`
+export const Left = styled.div`
   max-width: 309px;
   padding-left: 8px;
 `;
 
-export const $Right = styled.div`
+export const Right = styled.div`
   padding: 0 0 0 10px;
 
   @media ${device.tabletL} {
@@ -58,7 +58,7 @@ export const $Right = styled.div`
   }
 `;
 
-export const $List = styled.div`
+export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 26px;
@@ -70,7 +70,7 @@ export const $List = styled.div`
   }
 `;
 
-export const $ListItem = styled.div`
+export const ListItem = styled.div`
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
@@ -82,7 +82,7 @@ export const $ListItem = styled.div`
   }
 `;
 
-export const $Icon = styled.div`
+export const Icon = styled.div`
   background: url(${({ icon }) => icon});
   width: 40px;
   height: 40px;
@@ -93,6 +93,6 @@ export const $Icon = styled.div`
   }
 `;
 
-export const $Text = styled.div`
+export const Text = styled.div`
   width: 85%;
 `;

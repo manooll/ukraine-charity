@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 
-export const $Appreciate = styled.div`
+export const Appreciate = styled.div`
   background: #003D9D;
   font-size: 20px;
   line-height: 26px;
@@ -18,7 +18,7 @@ export const $Appreciate = styled.div`
   }
 `;
 
-export const $Donation = styled.div`
+export const DonationBlock = styled.div`
   padding: 42px 5px 0;
   color: ${Colors.white};
   background: ${Colors.blue};
@@ -28,7 +28,7 @@ export const $Donation = styled.div`
   }
 `;
 
-export const $DonationWrap = styled.div`
+export const DonationWrap = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -37,12 +37,12 @@ export const $DonationWrap = styled.div`
   }
 `;
 
-export const $Text = styled.div`
+export const Text = styled.div`
   max-width: 670px;
   margin: 0 auto;
 `;
 
-export const $Title = styled.h2`
+export const Title = styled.h2`
   margin: 5px 0 23px;
   font-size: 24px;
   font-weight: 600;
@@ -54,7 +54,7 @@ export const $Title = styled.h2`
   }
 `;
 
-export const $Smalltitle = styled.h3`
+export const SmallTitle = styled.h3`
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -62,7 +62,7 @@ export const $Smalltitle = styled.h3`
   color: ${Colors.black};  
 `;
 
-export const $Description = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -79,7 +79,7 @@ export const $Description = styled.p`
   }
 `;
 
-export const $Left = styled.div`
+export const Left = styled.div`
   padding-bottom: 20px;
 
   @media ${device.tabletL} {
@@ -89,7 +89,7 @@ export const $Left = styled.div`
   }
 `;
 
-export const $Right = styled.div`
+export const Right = styled.div`
   @media ${device.tabletL} {
     width: 54%;
     padding-top: 10px;
@@ -97,7 +97,7 @@ export const $Right = styled.div`
   }
 `;
 
-export const $PaypalForm = styled.div`
+export const PaypalForm = styled.div`
   position: relative;
   max-width: 100%;
   padding: 32px 4px;
@@ -139,7 +139,7 @@ export const $PaypalForm = styled.div`
   }
 `;
 
-export const $List = styled.ul`
+export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 4px;
@@ -150,7 +150,7 @@ export const $List = styled.ul`
   }
 `;
 
-export const $ListItem = styled.li`
+export const ListItem = styled.li`
   cursor: pointer;
   color: ${({ isActive }) => isActive ? Colors.black : Colors.blue};
   border: 2px solid ${({ isActive }) => isActive ? Colors.blue : 'transparent'};
@@ -173,5 +173,31 @@ export const $ListItem = styled.li`
 
   @media ${device.tabletL} {
 
+  }
+`;
+
+export const PaypalInput = styled.input`
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: ${Colors.yellow};
+  color: ${Colors.black};
+  padding: 12px 16px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  transition: background-image .3s ease-in;
+  width: 100%;
+  text-align: center;
+
+  :hover {
+    background-image: linear-gradient(to bottom, #FEC600, #FEE500);
+  }
+
+  :active {
+    background-image: linear-gradient(to bottom, #FEE500, #FEC600);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
   }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 
-export const $Contact = styled.div`
+export const ContactBlock = styled.div`
   padding: 40px 0 0;
   background: #EDF4FA;
   margin-bottom: -46px;
@@ -13,7 +13,7 @@ export const $Contact = styled.div`
   }
 `;
 
-export const $FormContainer = styled.div`
+export const FormContainer = styled.div`
   background: ${Colors.white};
   border-radius: 16px;
   padding: 29px;
@@ -29,12 +29,12 @@ export const $FormContainer = styled.div`
   }
 `;
 
-export const $Form = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
 
-export const $Label = styled.div`
+export const Label = styled.div`
   position: relative;
   margin-bottom: 24px;
 
@@ -50,7 +50,7 @@ export const $Label = styled.div`
   }
 `;
 
-export const $Title = styled.div`
+export const Title = styled.div`
   color: ${Colors.black};
   margin: 0 0 21px;
   font-size: 24px;
@@ -86,16 +86,16 @@ const FormField = `
   }
 `;
 
-export const $Input = styled.input`
+export const Input = styled.input`
   ${FormField};
 `;
 
-export const $Textarea = styled.textarea`
+export const Textarea = styled.textarea`
   ${FormField};
   resize: none;
 `;
 
-export const $Submit = styled.input`
+export const Submit = styled.input`
   cursor: pointer;
   background-color: ${Colors.yellow};
   color: ${Colors.black};
@@ -107,7 +107,6 @@ export const $Submit = styled.input`
   border: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
   max-width: 167px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
   transition: background-image .3s ease-in;
 
   :hover {
@@ -118,13 +117,9 @@ export const $Submit = styled.input`
     background-image: linear-gradient(to bottom, #FEE500, #FEC600);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
   }
-
-  @media ${device.tabletL} {
-
-  }
 `;
 
-export const $Error = styled.small`
+export const Error = styled.small`
   display: inline-block;
   color: #C92519;
   font-size: 12px;

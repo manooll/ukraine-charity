@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { $Help, $HelpWrap, $Title, $Smalltitle, $Text, $List, $ListItem, $Icon, $Left, $Right } from './help.styled';
+import { HelpBlock, HelpWrap, Title, SmallTitle, Text, List, ListItem, Icon, Left, Right } from './help.styled';
 import { Container } from '../components/container';
 import shipped from '../assets/img/shipped.svg';
 import treatment from '../assets/img/treatment.svg';
@@ -15,25 +15,25 @@ export const Help = () => {
   ]);
 
   return (
-    <$Help id='help'>
+    <HelpBlock id='help'>
       <Container>
-        <$HelpWrap>
-          <$Left>
-            <$Smalltitle>HOW CAN I HELP?</$Smalltitle>
-            <$Title>Our current and immediate humanitarian projects:</$Title>
-          </$Left>
-          <$Right>
-            <$List>
+        <HelpWrap>
+          <Left>
+            <SmallTitle>HOW CAN I HELP?</SmallTitle>
+            <Title>Our current and immediate humanitarian projects:</Title>
+          </Left>
+          <Right>
+            <List>
               {list.map(({ icon, text }, index) => (
-                <$ListItem key={index}>
-                  <$Icon icon={icon} />
-                  <$Text>{text}</$Text>
-                </$ListItem>
+                <ListItem key={index}>
+                  <Icon icon={icon} />
+                  <Text>{text}</Text>
+                </ListItem>
               ))}
-            </$List>
-          </$Right>
-        </$HelpWrap>
+            </List>
+          </Right>
+        </HelpWrap>
       </Container>
-    </$Help>
+    </HelpBlock>
   );
 }

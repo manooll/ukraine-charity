@@ -125,8 +125,12 @@ export const Error = styled.small`
   font-size: 12px;
   font-weight: normal;
   margin-top: 5px;
+`;
 
-  @media ${device.tabletL} {
-
-  }
+export const Success = styled.div`
+  display: inline-block;
+  color: ${Colors.blue};
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 24px;
 `;

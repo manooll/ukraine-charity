@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { ContactBlock, FormContainer, Form, Title, Label, Input, Textarea, Submit, Error } from './contact.styled';
+import { ContactBlock, FormContainer, Form, Title, Label, Input, Textarea, Submit, Error, Success } from './contact.styled';
 import { Container } from '../components/container';
 
 export const Contact = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+  const [ isSubmitted, setSubmitted ] = useState(false);
+
   const onSubmit = () => {
     emailjs.sendForm('service_qzf5icb', 'template_8jeujdp', '#contact-form', 'Hqx5vnKbFE08R4iHv')
       .then((result) => {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
         console.log(result.text);
       }, (error) => {
         console.error(JSON.stringify(error));
@@ -89,6 +95,9 @@ export const Contact = () => {
                 rows='5'
               />
             </Label>
+            {isSubmitted && (
+              <Success>Thank you for submission!</Success>
+            )}
             <Submit type='submit' value='Send message' />
           </Form>
         </FormContainer>

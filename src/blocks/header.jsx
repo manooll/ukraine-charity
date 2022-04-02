@@ -15,7 +15,7 @@ export const Header = () => {
     { title: 'The War in Ukraine', scrollToElement: 'war', isActive: true },
     { title: 'Our Approach', scrollToElement: 'approach', isActive: false },
     { title: 'About Us', scrollToElement: 'why-us', isActive: false },
-    { title: 'What can you do?', scrollToElement: 'timing', isActive: false },
+    { title: 'What can you do?', scrollToElement: 'donation', isActive: false },
     { title: 'Contact Us', scrollToElement: 'contact', isActive: false },
   ]);
 
@@ -90,6 +90,7 @@ export const Header = () => {
                   onClick={() => handleNavigate(index)}
                   smooth={true}
                   duration={1000}
+                  offset={-86}
                 >
                   {title}
                 </ListItem>

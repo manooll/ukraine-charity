@@ -71,15 +71,6 @@ export const ListItem = styled(Link)`
   :hover {
     color: ${Colors.yellow};
   }
-
-  :last-child {
-    color: ${Colors.yellow};
-    font-weight: 700;
-  }
-
-  :last-child:hover {
-    color: ${Colors.blue};
-  }
 `;
 
 export const Right = styled.div`

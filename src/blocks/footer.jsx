@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { FooterBlock, FooterWrap, Logo, Left, Nav, Right, List, ListItem } from './footer.styled';
 import { Container } from '../components/container';
+import { Paypal } from '../components/paypal';
 
 export const Footer = () => {
   const [ list ] = useState([
-    { title: 'The War in Ukraine', scrollToElement: 'war' },
-    { title: 'What can you do?', scrollToElement: 'timing' },
-    { title: 'Our Approach', scrollToElement: 'approach' },
-    { title: 'Contact Us', scrollToElement: 'contact' },
-    { title: 'About Us', scrollToElement: 'why-us' },
-    { title: 'Donate now', scrollToElement: 'donation' },
+    { title: 'The War in Ukraine', scrollToElement: 'war', isPaypalLink: false },
+    { title: 'What can you do?', scrollToElement: 'donation', isPaypalLink: false },
+    { title: 'Our Approach', scrollToElement: 'approach', isPaypalLink: false },
+    { title: 'Contact Us', scrollToElement: 'contact', isPaypalLink: false },
+    { title: 'About Us', scrollToElement: 'why-us', isPaypalLink: false },
+    { title: 'Donate now', scrollToElement: '', isPaypalLink: true },
   ]);
 
   return (
@@ -22,15 +23,25 @@ export const Footer = () => {
           </Left>
           <Nav>
             <List>
-              {list.map(({ title, scrollToElement }, index) => (
-                <ListItem
-                  key={index}
-                  to={scrollToElement}
-                  smooth={true}
-                  duration={1000}
-                >
-                  {title}
-                </ListItem>
+              {list.map(({ title, scrollToElement, isPaypalLink }, index) => (
+                <React.Fragment key={index}>
+                  {isPaypalLink ? (
+                      <Paypal
+                        btnText={title}
+                        isLink={true}
+                      />
+                    ) : (
+                      <ListItem
+                        to={scrollToElement}
+                        smooth={true}
+                        duration={1000}
+                        offset={-86}
+                      >
+                        {title}
+                      </ListItem>
+                    )
+                  }
+                </React.Fragment>
               ))}
             </List>
           </Nav>

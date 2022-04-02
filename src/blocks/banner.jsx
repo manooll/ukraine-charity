@@ -15,9 +15,10 @@ export const Banner = () => {
             We appreciate <span>your care, help and sensitivity</span> to the urgency of this situation!
           </Subtitle>
           <Link
-            to='help'
+            to='donation'
             smooth={true}
             duration={1000}
+            offset={-86}
           >
             <Button
               size={ButtonSize.large}
@@ -31,6 +32,7 @@ export const Banner = () => {
             to='video'
             smooth={true}
             duration={1000}
+            offset={-86}
           >
             <MouseScroll />
           </Link>

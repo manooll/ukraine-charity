@@ -63,4 +63,15 @@ export const PaypalInput = styled.input`
 
 
 export const PaypalLink = styled.input`
+  cursor: pointer;
+  font-size: 14px;
+  color: ${Colors.yellow};
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  :hover {
+    color: ${Colors.blue};
+  }
 `;

@@ -1,8 +1,7 @@
 import React from 'react';
 import { WarBlock, WarWrap, Title, Left, WarPic, Right, Description } from './war.styled';
 import { Container } from '../components/container';
-import { Button, ButtonSize, ButtonColor, ButtonType } from '../components/button';
-import { Link } from 'react-scroll';
+import { Paypal } from '../components/paypal';
 
 export const War = () => {
   return (
@@ -20,19 +19,7 @@ export const War = () => {
             <Description>
               While we have been in touch with families in Ukraine and have been assisting with funds and connections, we feel at this time we must do more to address the growing humanitarian crisis.
             </Description>
-            <Link
-              to='donation'
-              smooth={true}
-              duration={1000}
-            >
-              <Button
-                size={ButtonSize.large}
-                color={ButtonColor.yellow}
-                type={ButtonType.normal}
-              >
-                Donate now
-              </Button>
-            </Link>
+            <Paypal btnText='Donate now' />
           </Right>
         </WarWrap>
       </Container>

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose } from './header.styled';
-import { Button, ButtonSize, ButtonColor, ButtonType } from '../components/button';
+import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose, PaypalInputOutlined, PaypalInputNormal } from './header.styled';
 import { Container } from '../components/container';
 import { useEffect } from 'react';
-import { Link } from 'react-scroll';
 
 const mobileM = 375;
 const tabletL = 991;
@@ -97,31 +95,36 @@ export const Header = () => {
                 </ListItem>
               ))}
             </List>
-            <Link
-              to='donation'
-              smooth={true}
-              duration={1000}
+            <form
+              action = 'https://www.paypal.com/donate'
+              method='post'
+              target='_top'
             >
+              <input
+                type='hidden'
+                name='hosted_button_id'
+                value='XSFV948DXGLLG'
+              />
               {(!isSticky && deviceWidthState === tabletL) ||
                 deviceWidthState === mobileM ? (
-                <Button
-                  size={ButtonSize.normal}
-                  color={ButtonColor.yellow}
-                  type={ButtonType.outlined}
-                >
-                  Donate
-                </Button>
+                  <PaypalInputOutlined
+                    type='submit'
+                    value='Donate'
+                    border='0'
+                    name='submit'
+                    title='PayPal - The safer, easier way to pay online!'
+                  />
                 ) : (
-                  <Button
-                    size={ButtonSize.normal}
-                    color={ButtonColor.yellow}
-                    type={ButtonType.normal}
-                  >
-                    Donate
-                  </Button>
+                  <PaypalInputNormal
+                    type='submit'
+                    value='Donate'
+                    border='0'
+                    name='submit'
+                    title='PayPal - The safer, easier way to pay online!'
+                  />
                 )
               }
-            </Link>
+            </form>
           </Navigation>
         </HeaderWrap>
       </Container>

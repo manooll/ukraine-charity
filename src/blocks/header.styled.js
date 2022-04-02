@@ -134,9 +134,9 @@ export const Navigation = styled.div`
     justify-content: center;
   }
 
-  button {
-    width: 327px;
-    margin: 30px auto 0;
+  form {
+    display: flex;
+    justify-content: center;
   }
 
   @media ${device.tabletL} { 
@@ -235,5 +235,61 @@ export const ListItem = styled(Link)`
   
   @media ${device.laptop} { 
     font-size: 15px;
+  }
+`;
+
+export const PaypalInputOutlined = styled.input`
+  cursor: pointer;
+  width: 327px;
+  margin: 30px auto 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 10px;
+  color: ${Colors.yellow};
+  border: 1.5px solid ${Colors.yellow};
+  border-radius: 8px;
+  background: transparent;
+  transition: .2s ease-in;
+
+  :hover,
+  :active {
+    color: ${Colors.blue};
+    background: ${Colors.yellow};
+  }
+
+  @media ${device.tabletL} {
+    font-size: 15px;
+    width: auto;
+    margin: 0;
+  }
+`;
+
+export const PaypalInputNormal = styled.input`
+  cursor: pointer;
+  width: 327px;
+  margin: 30px auto 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 10px;
+  color: ${Colors.black};
+  border: none;
+  border-radius: 8px;
+  background-image: linear-gradient(to bottom, ${Colors.yellow}, ${Colors.yellow});
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  transition: background-image .3s ease-in;
+
+  :hover {
+    background-image: linear-gradient(to bottom, #FEC600, #FEE500);
+  }
+
+  :active {
+    background-image: linear-gradient(to bottom, #FEE500, #FEC600);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  }
+
+  @media ${device.tabletL} {
+    font-size: 15px;
+    width: auto;
+    margin: 0;
   }
 `;

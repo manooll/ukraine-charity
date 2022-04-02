@@ -73,6 +73,13 @@ export const Left = styled.div`
     background-size: contain;
   }
 
+  input {
+    font-size: 15px;
+    padding: 10px 16px;
+    text-transform: none;
+    width: auto;
+  }
+
   @media ${device.tabletL} {
     padding: 97px 54px 102px 100px;
 

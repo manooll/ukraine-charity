@@ -75,6 +75,13 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
+  input {
+    font-size: 15px;
+    padding: 10px 16px;
+    text-transform: none;
+    width: auto;
+  }
+
   @media ${device.tabletL} {
     padding: 0 0 0 36px;
   }

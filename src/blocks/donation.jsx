@@ -1,5 +1,5 @@
 import React from 'react';
-import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+// import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { Appreciate, Text, DonationBlock, DonationWrap, Description, Title, SmallTitle, List, ListItem, Left, Right, PaypalForm, PaypalInput } from './donation.styled';
 import { Label, Input } from './contact.styled';
 import { Container } from '../components/container';
@@ -130,7 +130,7 @@ export class Donation extends React.Component {
               <Right>
                 <PaypalForm>
                   <SmallTitle>your donation will help</SmallTitle>
-                  <List>
+                  {/* <List>
                     {this.state.list.map(({ value, isActive }, index) => (
                       <React.Fragment key={`${value}_${index}`}>
                         {typeof value === 'number' ? (
@@ -150,8 +150,8 @@ export class Donation extends React.Component {
                         )}
                       </React.Fragment>
                     ))}
-                  </List>
-                  {this.state.isInputShown && (
+                  </List> */}
+                  {/* {this.state.isInputShown && (
                     <Label>
                       <span>Amount</span>
                       <Input
@@ -161,7 +161,7 @@ export class Donation extends React.Component {
                         name='amount'
                       />
                     </Label>
-                  )}
+                  )} */}
 
                   <form
                     action='https://www.paypal.com/donate'

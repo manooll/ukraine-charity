@@ -19,6 +19,7 @@ export const Donation = () => {
                 <SmallTitle>your donation will help</SmallTitle>
                 <Paypal
                   isWidget={true}
+                  fullWidth={true}
                   btnText='Donate'
                 />
               </PaypalForm>

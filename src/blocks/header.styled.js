@@ -139,6 +139,12 @@ export const Navigation = styled.div`
     justify-content: center;
   }
 
+  button {
+    width: 327px;
+    box-sizing: border-box;
+    margin: 30px auto 0;
+  }
+
   @media ${device.tabletL} { 
     position: relative;
     width: auto;
@@ -150,8 +156,19 @@ export const Navigation = styled.div`
     transform: translateX(0);
 
     button {
-      width: auto;
+      width: 327px;
       margin: 0;
+      font-size: 14px;
+      padding: 8px 10px;
+      white-space: nowrap;
+    }
+
+    @media ${device.tabletL} {
+      button {
+        font-size: 15px;
+        width: auto;
+        margin: 0;
+      }
     }
   }
 `;
@@ -196,6 +213,8 @@ export const ListItem = styled(Link)`
   font-size: 18px;
   max-width: 300px;
   margin: 0 auto;
+  white-space: nowrap;
+  align-items: center;
 
   :hover {
     color: ${Colors.yellow};

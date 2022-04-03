@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose, PaypalInputOutlined, PaypalInputNormal } from './header.styled';
 import { Container } from '../components/container';
 import { useEffect } from 'react';
+import { Paypal } from '../components/paypal';
 
 const mobileM = 375;
 const tabletL = 991;
@@ -99,7 +100,8 @@ export const Header = () => {
                 </ListItem>
               ))}
             </List>
-            <form
+            <Paypal />
+            {/* <form
               action = 'https://www.paypal.com/donate'
               method='post'
               target='_top'
@@ -128,7 +130,7 @@ export const Header = () => {
                   />
                 )
               }
-            </form>
+            </form> */}
           </Navigation>
         </HeaderWrap>
       </Container>

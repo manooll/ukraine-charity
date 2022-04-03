@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('//db.onlinewebfonts.com/c/44994582bcefd02119158ff8b0d16b75?family=PayPal+Sans+Big');
 
 body {
   margin: 0;
@@ -24,3 +25,5 @@ ul {
 *:focus {
   outline: none;
 }
+
+@font-face {font-family: "PayPal Sans Big"; src: url("//db.onlinewebfonts.com/t/44994582bcefd02119158ff8b0d16b75.eot"); src: url("//db.onlinewebfonts.com/t/44994582bcefd02119158ff8b0d16b75.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/44994582bcefd02119158ff8b0d16b75.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/44994582bcefd02119158ff8b0d16b75.woff") format("woff"), url("//db.onlinewebfonts.com/t/44994582bcefd02119158ff8b0d16b75.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/44994582bcefd02119158ff8b0d16b75.svg#PayPal Sans Big") format("svg"); }

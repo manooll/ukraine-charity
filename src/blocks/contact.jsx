@@ -69,10 +69,6 @@ export const Contact = () => {
               <Input
                 {...register('phone', {
                   required: true,
-                  pattern: {
-                    value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
-                    message: 'Please provide a valid phone number',
-                  } 
                 })}
                 placeholder='+1'
                 type='text'

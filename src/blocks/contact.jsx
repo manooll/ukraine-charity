@@ -37,7 +37,7 @@ export const Contact = () => {
                   required: true,
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address',
+                    message: 'Please provide a valid email address',
                   }
                 })}
                 placeholder='mail@gmail.com'
@@ -45,7 +45,7 @@ export const Contact = () => {
                 name='email'
               />
               <Error>
-                {errors.email?.type === 'required' && 'Email is required'}
+                {errors.email?.type === 'required' && 'Please provide a valid email address'}
                 {errors.email?.message}
               </Error>
             </Label>
@@ -59,7 +59,7 @@ export const Contact = () => {
                 name='userName'
               />
               <Error>
-                {errors.userName?.type === 'required' && 'Name is required'}
+                {errors.userName?.type === 'required' && 'Please provide a valid name'}
               </Error>
             </Label>
 
@@ -71,7 +71,7 @@ export const Contact = () => {
                   required: true,
                   pattern: {
                     value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
-                    message: 'Invalid email phone number',
+                    message: 'Please provide a valid phone number',
                   } 
                 })}
                 placeholder='+1'
@@ -79,7 +79,7 @@ export const Contact = () => {
                 name='phone'
               />
               <Error>
-                {errors.phone?.type === 'required' && 'Phone is required'}
+                {errors.phone?.type === 'required' && 'Please provide a valid phone number'}
                 {errors.phone?.message}
               </Error>
             </Label>

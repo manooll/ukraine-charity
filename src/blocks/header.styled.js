@@ -156,7 +156,8 @@ export const Navigation = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.a`
+  display: block;
   width: 146px;
   height: 34px;
   background-image: url(${({ sticky }) => sticky === 'true' ? logoBlue : logo});

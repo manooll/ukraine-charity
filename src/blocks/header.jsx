@@ -63,7 +63,10 @@ export const Header = () => {
     >
       <Container>
         <HeaderWrap>
-          <Logo sticky={isSticky.toString()} />
+          <Logo
+            href={window.location}
+            sticky={isSticky.toString()}
+          />
           <ToggleWrap
             onClick={() => toggleMenuActive(!menuActive)}
           >

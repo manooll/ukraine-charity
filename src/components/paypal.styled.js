@@ -36,40 +36,6 @@ export const ListItem = styled.input`
   }
 `;
 
-// export const PaypalInput = styled.input`
-//   cursor: pointer;
-//   box-sizing: border-box;
-//   background-color: ${Colors.yellow};
-//   color: ${Colors.black};
-//   padding: 12px 16px;
-//   text-transform: uppercase;
-//   font-size: 15px;
-//   font-weight: bold;
-//   border-radius: 8px;
-//   border: none;
-//   box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-//   transition: background-image .3s ease-in;
-//   width: 100%;
-//   text-align: center;
-
-//   :hover {
-//     background-image: linear-gradient(to bottom, #FEC600, #FEE500);
-//   }
-
-//   :active {
-//     background-image: linear-gradient(to bottom, #FEE500, #FEC600);
-//     box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-//   }
-// `;
-
-export const PaypalIcon = styled.span`
-  background-image: url(${paypal});
-  width: 24px;
-  height: 24px;
-  background-size: contain;
-  background-repeat: no-repeat;
-`;
-
 export const PaypalInput = styled.button`
   cursor: pointer;
   position: relative;
@@ -95,6 +61,14 @@ export const PaypalInput = styled.button`
   :active {
     background: #d89700;
     border-color: #d89700;
+  }
+
+  span {
+    padding-right: ${({ isWidget }) => isWidget === 'true' ? '3px' : '0'};
+  }
+
+  svg {
+    padding: 0 3px;
   }
 
   :hover:after,

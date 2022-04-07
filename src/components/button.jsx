@@ -1,5 +1,5 @@
 import React from 'react';
-import { $Button, $ButtonOutlined } from './button.styled';
+import { ButtonNormal, ButtonOutlined } from './button.styled';
 import { Colors } from '../assets/styles/colors';
 
 export const ButtonSize = {
@@ -25,18 +25,18 @@ export const Button = ({
   children,
 }) => {
   return type === ButtonType.normal ? (
-    <$Button
+    <ButtonNormal
       size={size}
       color={color}
     >
       {children}
-    </$Button>
+    </ButtonNormal>
   ) : (
-    <$ButtonOutlined
+    <ButtonOutlined
       size={size}
       color={color}
     >
       {children}
-    </$ButtonOutlined>
+    </ButtonOutlined>
   );
 }

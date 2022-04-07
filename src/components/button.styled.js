@@ -3,7 +3,7 @@ import { ButtonSize, ButtonColor } from './button';
 import { device } from '../assets/styles/media-query';
 import { Colors } from '../assets/styles/colors';
 
-export const $Button = styled.button`
+export const ButtonNormal = styled.button`
   cursor: pointer;
   font-size: ${({ size }) => size === ButtonSize.normal ? '14px' : '16px'};
   font-weight: bold;
@@ -29,7 +29,7 @@ export const $Button = styled.button`
   }
 `;
 
-export const $ButtonOutlined = styled.button`
+export const ButtonOutlined = styled.button`
   cursor: pointer;
   font-size: ${({ size }) => size === ButtonSize.normal ? '14px' : '16px'};
   font-weight: bold;

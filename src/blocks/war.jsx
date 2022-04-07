@@ -20,7 +20,7 @@ export const War = () => {
               While we have been in touch with families in Ukraine and have been assisting with funds and connections, we feel at this time we must do more to address the growing humanitarian crisis.
             </Description>
             <Paypal
-              isButton={true}
+              isWidget={true}
               btnText='Donate now'
             />
           </Right>

@@ -101,7 +101,7 @@ export const Header = () => {
               ))}
             </List>
             <Paypal
-              isButton={true}
+              isWidget={true}
             />
           </Navigation>
         </HeaderWrap>

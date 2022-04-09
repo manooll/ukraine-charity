@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
-import support from '../assets/img/support.png';
 import yellow from '../assets/img/yellow.svg';
 import { device } from '../assets/styles/media-query';
 
@@ -61,6 +60,11 @@ export const Left = styled.div`
   color: ${Colors.white};
   overflow: hidden;
 
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
   :before {
     content: '';
     position: absolute;
@@ -97,11 +101,18 @@ export const Right = styled.div`
   min-width: 100%;
   min-height: 100%;
   height: 58.6666666667vw;
-  background: url(${support});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   z-index: 1;
+
+  > span {
+    width: 100%;
+    height: 100%;
+  }
+
+  > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   @media ${device.tabletL} {
     min-width: 49.1961414791vw;

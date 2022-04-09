@@ -3,6 +3,9 @@ import { BannerBlock, BannerWrap, Title, Subtitle, Pulse, MouseScroll } from './
 import { Container } from '../components/container';
 import { Button, ButtonSize, ButtonColor, ButtonType } from '../components/button';
 import { Link } from 'react-scroll';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import bannerBg from '../assets/img/banner-bg.png';
 
 export const Banner = () => {
   return (
@@ -38,6 +41,11 @@ export const Banner = () => {
           </Link>
         </BannerWrap>
       </Container>
+      <LazyLoadImage
+        alt='Global Aid Bg'
+        effect='blur'
+        src={bannerBg}
+      />
     </BannerBlock>
   );
 }

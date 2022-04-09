@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose, PaypalInputOutlined, PaypalInputNormal } from './header.styled';
+import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose } from './header.styled';
 import { Container } from '../components/container';
-import { useEffect } from 'react';
 import { Paypal } from '../components/paypal';
-
-const mobileM = 375;
-const tabletL = 991;
 
 export const Header = () => {
   const [ menuActive, toggleMenuActive ] = useState(false);
   const [ isSticky, setSticky ] = useState(false);
-  const [ deviceWidthState, setDeviceWidthState ] = useState(tabletL);
 
   const [ list, updateList ] = useState([
     { title: 'The War in Ukraine', scrollToElement: 'war', isActive: true },
@@ -42,20 +37,7 @@ export const Header = () => {
     }
   }
 
-  const toggleDeviceWidthState = () => {
-    if (window.innerWidth <= tabletL) {
-      setDeviceWidthState(mobileM);
-    } else {
-      setDeviceWidthState(tabletL);
-    }
-  }
-
   window.addEventListener('scroll', toggleHeaderSticky);
-  window.addEventListener('resize', toggleDeviceWidthState);
-
-  useEffect(() => {
-    toggleDeviceWidthState();
-  }, []);
 
   return (
     <HeaderBlock

@@ -1,7 +1,10 @@
 import React from 'react';
-import { WarBlock, WarWrap, Title, Left, WarPic, Right, Description } from './war.styled';
+import { WarBlock, WarWrap, Title, Left, Right, Description } from './war.styled';
 import { Container } from '../components/container';
 import { Paypal } from '../components/paypal';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import war from '../assets/img/war.png';
 
 export const War = () => {
   return (
@@ -9,7 +12,11 @@ export const War = () => {
       <Container>
         <WarWrap>
           <Left>
-            <WarPic />
+            <LazyLoadImage
+              alt='The War in Ukraine'
+              effect='blur'
+              src={war}
+            />
           </Left>
           <Right>
             <Title>The War in Ukraine</Title>

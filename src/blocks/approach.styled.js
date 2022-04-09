@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import approach from '../assets/img/approach.png';
 import pulse from '../assets/img/pulse-blue.svg';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
@@ -108,13 +107,20 @@ export const Left = styled.div`
 export const Right = styled.div`
   min-width: 100%;
   height: 58.6666666667vw;
-  background: url(${approach});
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  > span {
+    width: 100%;
+    height: 100%;
+  }
+
+  > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   @media ${device.tabletL} {
     min-width: 49.1961414791vw;
-    min-height: 100%;
     height: auto;
   }
 `;

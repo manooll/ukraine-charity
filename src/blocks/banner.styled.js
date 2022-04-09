@@ -1,18 +1,29 @@
 import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
-import bannerBg from '../assets/img/banner-bg.png';
 import scrolling from '../assets/img/scrolling.svg';
 import pulse from '../assets/img/pulse.svg';
 import { device } from '../assets/styles/media-query';
 
 export const BannerBlock = styled.div`
+  position: relative;
   height: 100vh;
   max-height: -webkit-fill-available;
   background-color: ${Colors.blue};
-  background-image: url(${bannerBg});
-  background-size: cover;
-  background-repeat: no-repeat;
   color: ${Colors.white};
+
+  > span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export const BannerWrap = styled.div`
@@ -24,6 +35,7 @@ export const BannerWrap = styled.div`
   text-align: center;
   height: 100vh;
   max-height: -webkit-fill-available;
+  z-index: 1;
 `;
 
 export const Pulse = styled.div`

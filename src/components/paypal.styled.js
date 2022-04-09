@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
-import paypal from '../assets/img/paypal.svg';
 
 export const List = styled.div`
   display: grid;
@@ -69,6 +68,7 @@ export const PaypalInput = styled.button`
 
   svg {
     padding: 0 3px;
+    font-size: 1.35rem;
   }
 
   :hover:after,

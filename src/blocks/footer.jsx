@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { FooterBlock, FooterWrap, Logo, Left, Nav, Right, List, ListItem } from './footer.styled';
 import { Container } from '../components/container';
 import { Paypal } from '../components/paypal';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import footer from '../assets/img/footer-bg.png';
 
 export const Footer = () => {
   const [ list ] = useState([
@@ -59,6 +62,11 @@ export const Footer = () => {
           </Right>
         </FooterWrap>
       </Container>
+      <LazyLoadImage
+        alt='Footer'
+        effect='blur'
+        src={footer}
+      />
     </FooterBlock>
   );
 }

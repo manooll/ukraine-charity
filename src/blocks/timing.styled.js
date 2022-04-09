@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
-import timing from '../assets/img/timing.png';
 import pulse from '../assets/img/pulse-timing.svg';
 import { device } from '../assets/styles/media-query';
 
@@ -80,17 +79,23 @@ export const Description = styled.div`
 export const Left = styled.div`
   width: 88vw;
   height: 47.286667vw;
-  background: url(${timing});
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
+
+  > span {
+    width: 100%;
+    height: 100%;
+  }
+
+  > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 
   @media ${device.tabletL} {
     width: 106.318971vw;
     height: 30.318971vw;
     max-width: 412px;
     max-height: 412px;
-    background-position: 0 0;
     margin-right: 36px;
     margin-left: 48px;
   }

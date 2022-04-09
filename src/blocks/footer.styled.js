@@ -1,16 +1,31 @@
 import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
 import logo from '../assets/img/global-aid.svg';
-import footer from '../assets/img/footer-bg.png';
 import { device } from '../assets/styles/media-query';
 import { Link } from 'react-scroll';
 
 export const FooterBlock = styled.div`
+  position: relative;
   padding: 81px 10px 29px;
-  background: url(${footer});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  > span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   @media ${device.tabletL} {
     padding: 127px 0 70px;

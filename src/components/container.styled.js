@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../assets/styles/media-query';
 
-export const $Container = styled.div`
+export const ContainerBlock = styled.div`
   margin: 0 18px;
   max-width: 100%;
 

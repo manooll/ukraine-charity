@@ -1,10 +1,10 @@
 import React from 'react';
-import { $Container } from './container.styled';
+import { ContainerBlock } from './container.styled';
 
 export const Container = ({ children }) => {
   return (
-    <$Container>
+    <ContainerBlock>
       {children}
-    </$Container>
+    </ContainerBlock>
   );
 }

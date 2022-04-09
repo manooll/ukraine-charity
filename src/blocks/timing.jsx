@@ -1,13 +1,22 @@
 import React from 'react';
 import { TimingBlock, TimingWrap, Title, SmallTitle, Description, Icon, Left, Right } from './timing.styled';
 import { Container } from '../components/container';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import timing from '../assets/img/timing.png';
 
 export const Timing = () => {
   return (
     <TimingBlock id='timing'>
       <Container>
         <TimingWrap>
-          <Left />
+          <Left>
+            <LazyLoadImage
+              alt='The timing and what can you do to help?'
+              effect='blur'
+              src={timing}
+            />
+          </Left>
           <Right>
             <Title>The timing and what can you do to help?</Title>
             <Icon />

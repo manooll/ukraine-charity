@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import war from '../assets/img/war.png';
 import { device } from '../assets/styles/media-query';
 
 export const WarBlock = styled.div`
@@ -17,23 +16,6 @@ export const WarWrap = styled.div`
 
   @media ${device.tabletL} {
     flex-direction: row;
-  }
-`;
-
-export const WarPic = styled.div`
-  width: 88vw;
-  height: 47.286667vw;
-  background: url(${war});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media ${device.tabletL} {
-    width: 33.1189710611vw;
-    height: 33.1189710611vw;
-    max-width: 412px;
-    max-height: 412px;
-    background-position: 0 0;
   }
 `;
 
@@ -69,8 +51,30 @@ export const Description = styled.p`
 `;
 
 export const Left = styled.div`
+  > span {
+    width: 88vw;
+    height: 47.286667vw;
+  }
+
+  > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
   @media ${device.tabletL} {
     padding: 0 36px 0 50px;
+
+    > span {
+      width: 33.1189710611vw;
+      height: 33.1189710611vw;
+      max-width: 412px;
+      max-height: 412px;
+    }
+
+    > span img {
+      object-fit: cover;
+    }
   }
 `;
 

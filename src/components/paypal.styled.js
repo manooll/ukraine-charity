@@ -43,7 +43,6 @@ export const PaypalInput = styled.button`
   align-items: center;
   justify-content: center;
   border: 0.125rem solid #ffc43a;
-  font-family: PayPal Sans Big,Helvetica Neue,Arial,sans-serif;
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 400;

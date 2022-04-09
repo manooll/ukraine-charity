@@ -3,7 +3,7 @@ import { ApproachBlock, ApproachWrap, Title, Subtitle, SmallTitle, WeUnderstand,
 import { Container } from '../components/container';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import approach from '../assets/img/approach.png';
+import approach from '../assets/img/approach.webp';
 
 const Approach = () => {
   return (

@@ -3,7 +3,7 @@ import { WhyUsBlock, Title, Description, Left, Right } from './why-us.styled';
 import { Paypal } from '../components/paypal';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import support from '../assets/img/support.png';
+import support from '../assets/img/support.webp';
 
 const WhyUs = () => {
   return (

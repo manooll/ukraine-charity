@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonColor, ButtonType } from '../components/butto
 import { Link } from 'react-scroll';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import bannerBg from '../assets/img/banner-bg.png';
+import bannerBg from '../assets/img/banner-bg.webp';
 
 const Banner = () => {
   return (

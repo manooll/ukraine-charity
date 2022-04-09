@@ -3,7 +3,7 @@ import { TimingBlock, TimingWrap, Title, SmallTitle, Description, Icon, Left, Ri
 import { Container } from '../components/container';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import timing from '../assets/img/timing.png';
+import timing from '../assets/img/timing.webp';
 
 const Timing = () => {
   return (

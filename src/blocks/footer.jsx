@@ -4,7 +4,7 @@ import { Container } from '../components/container';
 import { Paypal } from '../components/paypal';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import footer from '../assets/img/footer-bg.png';
+import footer from '../assets/img/footer-bg.webp';
 
 export const Footer = () => {
   const [ list ] = useState([

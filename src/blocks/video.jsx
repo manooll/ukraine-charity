@@ -2,7 +2,7 @@ import React from 'react';
 import { VideoBlock, VideoWrap, Title, IFrame } from './video.styled';
 import { Container } from '../components/container';
 
-export const Video = () => {
+const Video = () => {
   return (
     <VideoBlock id='video'>
       <Container>
@@ -21,3 +21,5 @@ export const Video = () => {
     </VideoBlock>
   );
 }
+
+export default Video;

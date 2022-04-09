@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import support from '../assets/img/support.png';
 
-export const WhyUs = () => {
+const WhyUs = () => {
   return (
     <WhyUsBlock id='why-us'>
       <Left>
@@ -27,3 +27,5 @@ export const WhyUs = () => {
     </WhyUsBlock>
   );
 }
+
+export default WhyUs;

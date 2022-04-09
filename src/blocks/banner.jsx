@@ -7,7 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import bannerBg from '../assets/img/banner-bg.png';
 
-export const Banner = () => {
+const Banner = () => {
   return (
     <BannerBlock id='banner'>
       <Container>
@@ -49,3 +49,5 @@ export const Banner = () => {
     </BannerBlock>
   );
 }
+
+export default Banner;

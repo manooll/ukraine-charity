@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import approach from '../assets/img/approach.png';
 
-export const Approach = () => {
+const Approach = () => {
   return (
     <ApproachBlock id='approach'>
       <Container>
@@ -41,3 +41,5 @@ export const Approach = () => {
     </ApproachBlock>
   );
 }
+
+export default Approach;

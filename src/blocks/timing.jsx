@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import timing from '../assets/img/timing.png';
 
-export const Timing = () => {
+const Timing = () => {
   return (
     <TimingBlock id='timing'>
       <Container>
@@ -33,3 +33,5 @@ export const Timing = () => {
     </TimingBlock>
   );
 }
+
+export default Timing;

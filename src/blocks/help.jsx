@@ -6,7 +6,7 @@ import treatment from '../assets/img/treatment.svg';
 import doctor from '../assets/img/doctor.svg';
 import mask from '../assets/img/mask.svg';
 
-export const Help = () => {
+const Help = () => {
   const [ list ] = useState([
     { icon: shipped, text: 'Logistics (movement of supplies and refugee transportation)' },
     { icon: treatment, text: 'Medical supplies and medical equipment' },
@@ -37,3 +37,5 @@ export const Help = () => {
     </HelpBlock>
   );
 }
+
+export default Help;

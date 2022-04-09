@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { ContactBlock, FormContainer, Form, Title, Label, Input, Textarea, Submit, Error, Success } from './contact.styled';
 import { Container } from '../components/container';
 
-export const Contact = () => {
+const Contact = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const [ isSubmitted, setSubmitted ] = useState(false);
@@ -101,3 +101,5 @@ export const Contact = () => {
     </ContactBlock>
   );
 }
+
+export default Contact;

@@ -3,7 +3,7 @@ import { Appreciate, Text, DonationBlock, DonationWrap, Description, Title, Smal
 import { Container } from '../components/container';
 import { Paypal } from '../components/paypal';
 
-export const Donation = () => {
+const Donation = () => {
   return (
     <>
       <DonationBlock id='donation'>
@@ -37,3 +37,5 @@ export const Donation = () => {
     </>
   );
 }
+
+export default Donation;

@@ -50,6 +50,11 @@ export const Title = styled.h1`
     height: 24px;
   }
 
+  + span img {
+    width: 100%;
+    height: 100%;
+  }
+
   @media ${device.tabletL} {
     font-size: 64px;
     margin: 81px 0 10px;

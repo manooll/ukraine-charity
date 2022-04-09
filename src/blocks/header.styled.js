@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import logo from '../assets/img/global-aid.svg';
-import logoBlue from '../assets/img/global-aid-blue.svg';
 import { Colors } from '../assets/styles/colors';
 import { device } from '../assets/styles/media-query';
 import { Link } from 'react-scroll';
@@ -177,9 +175,12 @@ export const Logo = styled.a`
   display: block;
   width: 146px;
   height: 34px;
-  background-image: url(${({ sticky }) => sticky === 'true' ? logoBlue : logo});
-  background-size: contain;
-  background-repeat: no-repeat;
+
+  > span,
+  > span img {
+    width: 100%;
+    height: 100%;
+  }
 
   @media ${device.tabletL} {
     width: 181px;

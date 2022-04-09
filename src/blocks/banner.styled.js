@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { Colors } from '../assets/styles/colors';
-import scrolling from '../assets/img/scrolling.svg';
-import pulse from '../assets/img/pulse.svg';
 import { device } from '../assets/styles/media-query';
 
 export const BannerBlock = styled.div`
@@ -38,19 +36,6 @@ export const BannerWrap = styled.div`
   z-index: 1;
 `;
 
-export const Pulse = styled.div`
-  width: 40px;
-  height: 24px;
-  background-image: url(${pulse});
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  @media ${device.tabletL} {
-    width: 56px;
-    height: 33px;
-  }
-`;
-
 export const Title = styled.h1`
   font-size: 40px;
   font-weight: bold;
@@ -60,9 +45,19 @@ export const Title = styled.h1`
     color: ${Colors.yellow};
   }
 
+  + span {
+    width: 40px;
+    height: 24px;
+  }
+
   @media ${device.tabletL} {
     font-size: 64px;
     margin: 81px 0 10px;
+
+    + span {
+      width: 56px;
+      height: 33px;
+    }
   }
 `
 
@@ -91,7 +86,10 @@ export const MouseScroll = styled.div`
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  background: url(${scrolling});
-  background-repeat: no-repeat;
-  background-size: contain;
+
+  > span,
+  > span img {
+    width: 100%;
+    height: 100%;
+  }
 `;

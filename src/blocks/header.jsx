@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { HeaderBlock, HeaderWrap, Toggle, Navigation, Logo, List, ListItem, ToggleWrap, ToggleClose } from './header.styled';
 import { Container } from '../components/container';
 import { Paypal } from '../components/paypal';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import logo from '../assets/img/global-aid.svg';
+import logoBlue from '../assets/img/global-aid-blue.svg';
 
 export const Header = () => {
   const [ menuActive, toggleMenuActive ] = useState(false);
@@ -49,7 +53,21 @@ export const Header = () => {
           <Logo
             href={window.location}
             sticky={isSticky.toString()}
-          />
+          >
+            {isSticky ? (
+              <LazyLoadImage
+                alt='Global Aid Logo'
+                effect='blur'
+                src={logoBlue}
+              />
+            ) : (
+              <LazyLoadImage
+                alt='Global Aid Logo'
+                effect='blur'
+                src={logo}
+              />
+            )}
+          </Logo>
           <ToggleWrap
             onClick={() => toggleMenuActive(!menuActive)}
           >

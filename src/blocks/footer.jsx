@@ -23,7 +23,7 @@ export const Footer = () => {
           <Top>
             <Left>
               <Logo />
-              <a href='mailto:contact@globalaidfoundation.com'>contact@globalaidfoundation.com</a>
+              <a href='mailto:contact@globalaidfoundation.org'>contact@globalaidfoundation.org</a>
             </Left>
             <Nav>
               <List>

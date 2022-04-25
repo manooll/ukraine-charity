@@ -35,12 +35,7 @@ export const FooterBlock = styled.div`
 
 export const FooterWrap = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-
-  @media ${device.tabletL} {
-    flex-direction: row;
-  }
 `;
 
 export const Logo = styled.div`
@@ -56,6 +51,37 @@ export const Left = styled.div`
   > a {
     font-size: 14px;
     color: ${Colors.yellow};
+  }
+`;
+
+export const Top = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media ${device.tabletL} {
+    flex-direction: row;
+  }
+`;
+
+export const Bottom = styled.div`
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 13.31px;
+  color: #808080;
+  font-weight: 400;
+
+  a {
+    color: #808080;
+    text-decoration: none;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  @media ${device.tabletL} {
+    margin-top: 30px;
   }
 `;
 

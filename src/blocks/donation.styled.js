@@ -114,7 +114,7 @@ export const PaypalForm = styled.div`
     font-size: 15px;
   }
 
-  > div:last-child {
+  > div:nth-child(2) {
     display: flex;
     justify-content: center;
   }
@@ -136,5 +136,22 @@ export const PaypalForm = styled.div`
     :before {
       display: none;
     }
+  }
+`;
+
+export const Terms = styled.div`
+  display: block;
+  font-size: 10px;
+  line-height: 14px;
+  color: #666666;
+  font-weight: 400;
+
+  a {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    color: ${Colors.blue};
+    text-decoration: underline;
+    margin-left: 2px;
   }
 `;

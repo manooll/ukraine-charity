@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import logo from './assets/img/global-aid-blue.svg'
 import logoWhite from './assets/img/global-aid.svg'
 import './App.css'
@@ -6,34 +6,72 @@ import './App.css'
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
+  // Close menu on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [])
+
   const navItems = [
     { label: 'About', href: '#about' },
-    { label: 'Problem', href: '#problem' },
-    { label: 'Solution', href: '#solution' },
+    { label: 'The Problem', href: '#problem' },
+    { label: 'Our Solution', href: '#solution' },
     { label: 'Impact', href: '#impact' },
-    { label: 'Partner', href: '#partner' },
+    { label: 'Partner With Us', href: '#partner' },
   ]
 
   return (
     <>
+      {/* Skip to main content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
       {/* Header */}
-      <header className="header">
+      <header className="header" role="banner">
         <div className="container header-inner">
-          <a href="/" className="logo">
-            <img src={logo} alt="Global Aid Foundation" />
+          <a href="/" className="logo" aria-label="Global Aid Foundation - Home">
+            <img src={logo} alt="" aria-hidden="true" />
           </a>
           
           <button 
             className={`menu-toggle ${menuOpen ? 'active' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="main-nav"
           >
             <span></span>
             <span></span>
             <span></span>
           </button>
 
-          <nav className={`nav ${menuOpen ? 'open' : ''}`}>
+          {/* Mobile overlay backdrop */}
+          <div 
+            className={`nav-overlay ${menuOpen ? 'active' : ''}`}
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+
+          <nav 
+            id="main-nav"
+            className={`nav ${menuOpen ? 'open' : ''}`}
+            role="navigation"
+            aria-label="Main navigation"
+          >
             {navItems.map((item) => (
               <a 
                 key={item.href} 
@@ -51,11 +89,13 @@ function App() {
         </div>
       </header>
 
+      {/* Main Content */}
+      <main id="main">
       {/* Hero Section */}
-      <section className="hero" id="about">
+      <section className="hero" id="about" aria-labelledby="hero-title">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">Global Aid Foundation</h1>
+            <h1 id="hero-title" className="hero-title">Global Aid Foundation</h1>
             <p className="hero-tagline">Nourishing Health. Transforming Lives.</p>
             <p className="hero-text">
               Nutrition and food are not a luxury—they are essential to health. Yet millions of 
@@ -151,7 +191,7 @@ function App() {
             </div>
 
             <div className="solution-card">
-              <div className="solution-icon">
+              <div className="solution-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
@@ -180,17 +220,17 @@ function App() {
             just in services provided, but in A1C levels lowered, hospital readmissions prevented, 
             and lives extended.
           </p>
-          <div className="impact-metrics">
-            <div className="metric">
-              <span className="metric-icon">📉</span>
+          <div className="impact-metrics" role="list" aria-label="Key impact areas">
+            <div className="metric" role="listitem">
+              <span className="metric-icon" aria-hidden="true">📉</span>
               <span className="metric-label">A1C Levels Lowered</span>
             </div>
-            <div className="metric">
-              <span className="metric-icon">🏥</span>
-              <span className="metric-label">Readmissions Prevented</span>
+            <div className="metric" role="listitem">
+              <span className="metric-icon" aria-hidden="true">🏥</span>
+              <span className="metric-label">Hospital Readmissions Prevented</span>
             </div>
-            <div className="metric">
-              <span className="metric-icon">❤️</span>
+            <div className="metric" role="listitem">
+              <span className="metric-icon" aria-hidden="true">❤️</span>
               <span className="metric-label">Lives Extended</span>
             </div>
           </div>
@@ -216,9 +256,10 @@ function App() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer" role="contentinfo">
         <div className="container footer-inner">
           <div className="footer-brand">
             <img src={logoWhite} alt="Global Aid Foundation" className="footer-logo" />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import logo from './assets/img/global-aid.svg'
+import logo from './assets/img/global-aid-blue.svg'
+import logoWhite from './assets/img/global-aid.svg'
 import './App.css'
 
 function App() {
@@ -220,7 +221,7 @@ function App() {
       <footer className="footer">
         <div className="container footer-inner">
           <div className="footer-brand">
-            <img src={logo} alt="Global Aid Foundation" className="footer-logo" />
+            <img src={logoWhite} alt="Global Aid Foundation" className="footer-logo" />
             <p>Nourishing Health. Transforming Lives.</p>
           </div>
           <div className="footer-links">

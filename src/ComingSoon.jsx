@@ -12,27 +12,18 @@ const ComingSoonContainer = styled.div`
   background: #f5f5f5;
   padding: 20px;
 `;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(100px);
-  }
-`;
 
 const Content = styled.div`
   text-align: center;
   max-width: 600px;
+  background: ${Colors.white};
   padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 768px) {
     padding: 40px 30px;
+    border-radius: 15px;
   }
 `;
 

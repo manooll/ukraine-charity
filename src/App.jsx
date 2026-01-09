@@ -250,7 +250,7 @@ function App() {
             <p className="cta-highlight">
               Partner with us to close the gap between healthcare and the kitchen table.
             </p>
-            <a href="mailto:info@globalaidfoundation.org" className="btn btn-accent btn-large">
+            <a href="mailto:info@globalaidfoundation.org" className="btn btn-white btn-large">
               Contact Us
             </a>
           </div>

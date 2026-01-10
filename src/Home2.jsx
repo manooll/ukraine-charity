@@ -27,6 +27,26 @@ function Home2() {
     return () => document.removeEventListener('keydown', handleEscape)
   }, [])
 
+  // Update SEO meta tags for full site
+  useEffect(() => {
+    document.title = 'Global Aid Foundation | Nutrition Programs for Chronic Disease Management'
+    
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Global Aid Foundation delivers registered dietitian services, medically tailored meals, and nutrition education to help Americans with chronic diseases like diabetes and heart disease achieve better health outcomes.')
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Global Aid Foundation | Nutrition Programs for Chronic Disease Management')
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]')
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Closing the gap between healthcare and the kitchen table. We deliver evidence-based nutrition interventions to over 44 million Americans facing food insecurity.')
+    }
+  }, [])
+
   const navItems = [
     { label: 'About', href: '#about' },
     { label: 'The Problem', href: '#problem' },

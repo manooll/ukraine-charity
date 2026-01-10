@@ -1,3 +1,4 @@
+// App with simple routing
 import UnderConstruction from './UnderConstruction'
 import Home2 from './Home2'
 

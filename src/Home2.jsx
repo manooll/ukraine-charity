@@ -3,7 +3,7 @@ import logo from './assets/img/global-aid-blue.svg'
 import logoWhite from './assets/img/global-aid.svg'
 import './App.css'
 
-function App() {
+function Home2() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   // Prevent body scroll when mobile menu is open

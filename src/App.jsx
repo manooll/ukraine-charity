@@ -1,16 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import UnderConstruction from './UnderConstruction'
 import Home2 from './Home2'
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<UnderConstruction />} />
-        <Route path="/home2" element={<Home2 />} />
-      </Routes>
-    </BrowserRouter>
-  )
+  // Simple path-based routing without react-router
+  const path = window.location.pathname
+  
+  if (path === '/home2') {
+    return <Home2 />
+  }
+  
+  return <UnderConstruction />
 }
 
 export default App

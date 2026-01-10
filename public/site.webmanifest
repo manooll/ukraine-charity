@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Global Aid Foundation",
+    "short_name": "Global Aid",
+    "description": "Nourishing Health. Transforming Lives.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#1a5276",
     "background_color": "#ffffff",
     "display": "standalone"
 }

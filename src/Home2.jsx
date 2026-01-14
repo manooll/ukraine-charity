@@ -29,35 +29,38 @@ function Home2() {
 
   // Update SEO meta tags for full site
   useEffect(() => {
-    document.title = 'Global Aid Foundation | Nutrition Programs for Chronic Disease Management'
-    
-    // Set noindex for this preview page
-    const robotsMeta = document.querySelector('meta[name="robots"]')
-    if (robotsMeta) {
-      robotsMeta.setAttribute('content', 'noindex, nofollow')
-    }
-    
+    const pageTitle = 'Global Aid Foundation | Advancing Health Equity Through Nutrition'
+    const pageDescription = 'Global Aid Foundation advances health equity by addressing food insecurity, nutrition education, and pathways to care for individuals with or at risk for diet-related chronic diseases.'
+    const shortDescription = 'We advance health equity by addressing food insecurity, nutrition education, and pathways to care for underserved communities.'
+
+    document.title = pageTitle
+
+    // Primary meta tags
+    const metaTitle = document.querySelector('meta[name="title"]')
+    if (metaTitle) metaTitle.setAttribute('content', pageTitle)
+
     const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Global Aid Foundation delivers registered dietitian services, medically tailored meals, and nutrition education to help Americans with chronic diseases like diabetes and heart disease achieve better health outcomes.')
-    }
-    
+    if (metaDescription) metaDescription.setAttribute('content', pageDescription)
+
+    // Open Graph tags
     const ogTitle = document.querySelector('meta[property="og:title"]')
-    if (ogTitle) {
-      ogTitle.setAttribute('content', 'Global Aid Foundation | Nutrition Programs for Chronic Disease Management')
-    }
-    
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle)
+
     const ogDescription = document.querySelector('meta[property="og:description"]')
-    if (ogDescription) {
-      ogDescription.setAttribute('content', 'Closing the gap between healthcare and the kitchen table. We deliver evidence-based nutrition interventions to over 44 million Americans facing food insecurity.')
-    }
+    if (ogDescription) ogDescription.setAttribute('content', shortDescription)
+
+    // Twitter tags
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]')
+    if (twitterTitle) twitterTitle.setAttribute('content', pageTitle)
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]')
+    if (twitterDescription) twitterDescription.setAttribute('content', shortDescription)
   }, [])
 
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'The Problem', href: '#problem' },
-    { label: 'Our Solution', href: '#solution' },
-    { label: 'Impact', href: '#impact' },
+    { label: 'Mission', href: '#mission' },
+    { label: 'Objectives', href: '#objectives' },
+    { label: 'Approach', href: '#approach' },
     { label: 'Partner With Us', href: '#partner' },
   ]
 
@@ -118,148 +121,93 @@ function Home2() {
       {/* Main Content */}
       <main id="main">
       {/* Hero Section */}
-      <section className="hero" id="about" aria-labelledby="hero-title">
+      <section className="hero" id="hero" aria-labelledby="hero-title">
         <div className="container">
           <div className="hero-content">
             <h1 id="hero-title" className="hero-title">Global Aid Foundation</h1>
             <p className="hero-tagline">Nourishing Health. Transforming Lives.</p>
-            <p className="hero-text">
-              Nutrition and food are not a luxury—they are essential to health. Yet millions of 
-              Americans living with chronic conditions like diabetes, heart disease, and kidney 
-              disease lack access to both the expert guidance and the foods their bodies need to 
-              heal. This gap between clinical care and the kitchen table is where health outcomes 
-              are lost and healthcare costs spiral.
-            </p>
-            <p className="hero-mission">
-              <strong>Global Aid Foundation exists to close that gap.</strong>
-            </p>
-            <p className="hero-text">
-              We partner with healthcare systems, community organizations, and government programs 
-              to deliver evidence-based nutrition interventions to those who need them most. Our 
-              approach combines clinical expertise with practical support: registered dietitians 
-              who create personalized care plans, and medically tailored meals that make following 
-              those plans possible—even when resources are scarce.
-            </p>
-            <a href="#solution" className="btn btn-primary btn-large">
-              Learn How We Help
+            <a href="#mission" className="btn btn-primary btn-large">
+              Learn About Our Mission
             </a>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="section section-alt" id="problem">
+      {/* Our Mission Section */}
+      <section className="section" id="mission" aria-labelledby="mission-title">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">The Problem</h2>
-            <div className="accent-bar"></div>
-          </div>
-          <div className="problem-content">
-            <div className="stat-highlight">
-              <span className="stat-number">44M+</span>
-              <span className="stat-label">Americans face food insecurity</span>
+          <article itemScope itemType="https://schema.org/Article">
+            <header className="section-header">
+              <h2 id="mission-title" className="section-title" itemProp="headline">Our Mission</h2>
+              <div className="accent-bar" aria-hidden="true"></div>
+            </header>
+            <div className="mission-content" itemProp="articleBody">
+              <p className="section-text">
+                Our mission is to advance health equity by addressing the social determinants of health
+                that most profoundly shape people's lives—food insecurity, access to nutrition education,
+                and pathways to care. We believe that lasting improvements in health outcomes begin beyond
+                the clinical setting, in the everyday conditions where individuals and families live, work,
+                and grow.
+              </p>
+              <p className="section-text">
+                Our mission is centered on benefiting individuals living with, or at risk for, conditions
+                that can be prevented, managed, or even reversed through proper diet and targeted education.
+                By equipping people with the knowledge and ongoing support they need, we empower them to
+                take an active role in improving their health and long-term well-being.
+              </p>
             </div>
-            <p className="section-text">
-              For individuals managing chronic disease, poor nutrition doesn't just mean hunger—it 
-              leads to preventable hospitalizations, uncontrolled conditions, and shortened lives. 
-              Traditional healthcare rarely addresses what happens after the prescription is written 
-              and the patient goes home without the knowledge, support, or resources to eat for 
-              their health.
-            </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="section" id="solution">
+      {/* Our Objectives Section */}
+      <section className="section section-alt" id="objectives" aria-labelledby="objectives-title">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Our Solution</h2>
-            <div className="accent-bar"></div>
-            <p className="section-intro">
-              Through our clinical partner LifeChef Health, we deliver an integrated, clinically 
-              aligned care model that treats nutrition as the foundation of health:
-            </p>
-          </div>
-          
-          <div className="solutions-grid">
-            <div className="solution-card">
-              <div className="solution-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <h3 className="solution-title">Registered Dietitian Services</h3>
-              <p className="solution-text">
-                Licensed RDs conduct comprehensive assessments, develop individualized Medical 
-                Nutrition Therapy plans, and provide ongoing counseling. They coordinate directly 
-                with physicians and care teams to ensure nutrition is woven into every aspect of treatment.
-              </p>
-            </div>
-
-            <div className="solution-card">
-              <div className="solution-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                  <line x1="6" y1="1" x2="6" y2="4"></line>
-                  <line x1="10" y1="1" x2="10" y2="4"></line>
-                  <line x1="14" y1="1" x2="14" y2="4"></line>
-                </svg>
-              </div>
-              <h3 className="solution-title">Medically Tailored Meals</h3>
-              <p className="solution-text">
-                Designed by dietitians for specific diagnoses, our meals remove the barriers between 
-                knowing what to eat and actually eating it. For patients lacking time, ability, or 
-                access, we deliver chef-prepared meals that align precisely with their care plans.
-              </p>
-            </div>
-
-            <div className="solution-card">
-              <div className="solution-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-              </div>
-              <h3 className="solution-title">Nutrition Education</h3>
-              <p className="solution-text">
-                We empower patients and caregivers with practical, condition-specific knowledge that 
-                supports long-term behavior change and sustainable health beyond clinical intervention.
-              </p>
-            </div>
-          </div>
+          <article itemScope itemType="https://schema.org/Article">
+            <header className="section-header">
+              <h2 id="objectives-title" className="section-title" itemProp="headline">Our Objectives</h2>
+              <div className="accent-bar" aria-hidden="true"></div>
+              <p className="section-intro">We are committed to:</p>
+            </header>
+            <ul className="objectives-list" role="list" itemProp="articleBody">
+              <li role="listitem">Reducing food insecurity and improving access to nutritious, culturally appropriate meals.</li>
+              <li role="listitem">Expanding nutrition education to empower individuals and families to make informed, sustainable choices.</li>
+              <li role="listitem">Supporting preventive care and nutrition-based interventions for individuals living with, or at risk for, diet-related chronic diseases such as diabetes, cardiovascular disease, and obesity.</li>
+              <li role="listitem">Serving those who can significantly benefit from improved nutrition, particularly individuals whose conditions can be prevented, managed, or improved through proper diet and targeted education.</li>
+              <li role="listitem">Advancing health equity by removing barriers to care for underserved and vulnerable populations.</li>
+              <li role="listitem">Strengthening value-based care efforts by helping improve outcomes while reducing avoidable healthcare costs.</li>
+            </ul>
+          </article>
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="section section-alt" id="impact">
+      {/* Our Approach Section */}
+      <section className="section" id="approach" aria-labelledby="approach-title">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Our Impact</h2>
-            <div className="accent-bar"></div>
-          </div>
-          <p className="section-text impact-text">
-            Every interaction—whether a counseling session or a delivered meal—reduces emergency 
-            room visits, improves medication adherence, and restores hope. We measure success not 
-            just in services provided, but in A1C levels lowered, hospital readmissions prevented, 
-            and lives extended.
-          </p>
-          <div className="impact-metrics" role="list" aria-label="Key impact areas">
-            <div className="metric" role="listitem">
-              <span className="metric-icon" aria-hidden="true">📉</span>
-              <span className="metric-label">A1C Levels Lowered</span>
+          <article itemScope itemType="https://schema.org/Article">
+            <header className="section-header">
+              <h2 id="approach-title" className="section-title" itemProp="headline">Our Approach</h2>
+              <div className="accent-bar" aria-hidden="true"></div>
+            </header>
+            <div className="approach-content" itemProp="articleBody">
+              <p className="section-text">
+                We achieve our mission through community-centered programs and strategic partnerships with
+                clinical providers and other mission-aligned organizations across healthcare, public health,
+                and social services.
+              </p>
+              <p className="section-text">
+                By integrating nutrition interventions, preventive care, and sustained lifestyle support,
+                we extend our impact into both community and clinical settings. Our work is grounded in
+                evidence-based practices and designed to complement value-based care models that prioritize
+                outcomes, accountability, and patient-centered care.
+              </p>
+              <p className="section-text">
+                Through collaboration, innovation, and a shared commitment to equity, we help build healthier
+                communities—ensuring that access to nutritious food, education, and care is not a privilege
+                but a fundamental foundation for well-being.
+              </p>
             </div>
-            <div className="metric" role="listitem">
-              <span className="metric-icon" aria-hidden="true">🏥</span>
-              <span className="metric-label">Hospital Readmissions Prevented</span>
-            </div>
-            <div className="metric" role="listitem">
-              <span className="metric-icon" aria-hidden="true">❤️</span>
-              <span className="metric-label">Lives Extended</span>
-            </div>
-          </div>
+          </article>
         </div>
       </section>
 
@@ -267,14 +215,11 @@ function Home2() {
       <section className="section section-cta" id="partner">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title">Health Equity Starts at the Table</h2>
+            <h2 className="cta-title">Partner With Us</h2>
             <p className="cta-text">
-              Zip code and income should never determine health destiny. Together, we can ensure 
-              that every person managing chronic disease has access to the nutrition expertise and 
-              nourishing food their body needs to heal.
-            </p>
-            <p className="cta-highlight">
-              Partner with us to close the gap between healthcare and the kitchen table.
+              Through collaboration, innovation, and a shared commitment to equity, we can build
+              healthier communities together. Join us in ensuring that access to nutritious food,
+              education, and care is not a privilege but a fundamental foundation for well-being.
             </p>
             <a href="mailto:info@globalaidfoundation.org" className="btn btn-white btn-large">
               Contact Us

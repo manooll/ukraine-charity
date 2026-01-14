@@ -323,6 +323,81 @@
   }
 }
 
+/* ==================== MISSION SECTION ==================== */
+.mission-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-content .section-text {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.mission-content .section-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== OBJECTIVES SECTION ==================== */
+.objectives-list {
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.objectives-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.objectives-list li:last-child {
+  margin-bottom: 0;
+}
+
+.objectives-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .objectives-list li {
+    font-size: 16px;
+    padding-left: 28px;
+  }
+
+  .objectives-list li::before {
+    width: 10px;
+    height: 10px;
+    top: 8px;
+  }
+}
+
+/* ==================== APPROACH SECTION ==================== */
+.approach-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.approach-content .section-text {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.approach-content .section-text:last-child {
+  margin-bottom: 0;
+}
+
 /* ==================== PROBLEM SECTION ==================== */
 .problem-content {
   text-align: center;
@@ -549,5 +624,238 @@
 @media (max-width: 768px) {
   .footer-links {
     gap: 16px 24px;
+  }
+}
+
+/* ==================== ENHANCED MOBILE OPTIMIZATIONS ==================== */
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+  /* Improved touch targets - minimum 44px */
+  .btn {
+    min-height: 48px;
+    padding: 14px 24px;
+  }
+
+  .btn-large {
+    padding: 16px 28px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Better hero spacing for mobile */
+  .hero {
+    padding: 100px 0 48px;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  /* Section improvements */
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .section-intro {
+    font-size: 16px;
+  }
+
+  .section-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Mission and approach content */
+  .mission-content,
+  .approach-content {
+    padding: 0 8px;
+  }
+
+  .mission-content .section-text,
+  .approach-content .section-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* Objectives list */
+  .objectives-list {
+    padding: 0 8px;
+  }
+
+  .objectives-list li {
+    font-size: 15px;
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  .objectives-list li::before {
+    width: 8px;
+    height: 8px;
+    top: 9px;
+  }
+
+  /* CTA section */
+  .section-cta {
+    padding: 48px 0;
+  }
+
+  .cta-title {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .cta-text {
+    font-size: 15px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 32px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-link {
+    padding: 8px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Extra small phones (375px and below) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .cta-title {
+    font-size: 22px;
+  }
+
+  .objectives-list li {
+    font-size: 14px;
+  }
+
+  .section-text,
+  .mission-content .section-text,
+  .approach-content .section-text {
+    font-size: 14px;
+  }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: max(0px)) {
+  .header {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .footer {
+    padding-bottom: max(32px, env(safe-area-inset-bottom));
+  }
+
+  .section-cta {
+    padding-bottom: max(48px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .accent-bar {
+    background: var(--color-primary);
+  }
+
+  .objectives-list li::before {
+    background: var(--color-primary);
+  }
+
+  .section-cta {
+    background: #000;
+  }
+
+  .btn-primary {
+    border: 2px solid white;
+  }
+
+  .btn-white {
+    border: 2px solid var(--color-primary);
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .skip-link,
+  .section-cta,
+  .btn {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .section {
+    padding: 20px 0;
+    page-break-inside: avoid;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
   }
 }

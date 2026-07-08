@@ -7,22 +7,28 @@
 }
 
 :root {
-  --color-primary: #1a5276;
-  --color-primary-dark: #154360;
-  --color-accent: #148f77;
-  --color-accent-light: #d4efdf;
-  --color-text: #2c3e50;
-  --color-text-light: #566573;
+  --color-primary: #015BBB;
+  --color-primary-dark: #0148A0;
+  --color-primary-soft: #E8F1FC;
+  --color-accent: #0E9F8A;
+  --color-accent-soft: #E5F6F3;
+  --color-text: #0F1E33;
+  --color-text-light: #47586E;
   --color-bg: #ffffff;
-  --color-bg-alt: #f4f6f7;
-  --color-bg-dark: #1c2833;
-  --color-border: #d5dbdb;
+  --color-bg-alt: #F5F8FC;
+  --color-bg-dark: #071328;
+  --color-border: #E3EAF3;
+  --shadow-sm: 0 1px 2px rgba(15, 30, 51, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 30, 51, 0.08);
+  --shadow-lg: 0 16px 48px rgba(1, 91, 187, 0.14);
+  --radius: 14px;
   --max-width: 1140px;
   --header-height: 72px;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
 }
 
 body {
@@ -32,6 +38,7 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -53,12 +60,18 @@ button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
+  line-height: 1.15;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 ul {
   list-style: none;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .container {
@@ -70,6 +83,6 @@ ul {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 16px;
+    padding: 0 20px;
   }
 }

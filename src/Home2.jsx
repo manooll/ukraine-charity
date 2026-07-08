@@ -27,36 +27,6 @@ function Home2() {
     return () => document.removeEventListener('keydown', handleEscape)
   }, [])
 
-  // Update SEO meta tags for full site
-  useEffect(() => {
-    const pageTitle = 'Global Aid Foundation | Advancing Health Equity Through Nutrition'
-    const pageDescription = 'Global Aid Foundation advances health equity by addressing food insecurity, nutrition education, and pathways to care for individuals with or at risk for diet-related chronic diseases.'
-    const shortDescription = 'We advance health equity by addressing food insecurity, nutrition education, and pathways to care for underserved communities.'
-
-    document.title = pageTitle
-
-    // Primary meta tags
-    const metaTitle = document.querySelector('meta[name="title"]')
-    if (metaTitle) metaTitle.setAttribute('content', pageTitle)
-
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) metaDescription.setAttribute('content', pageDescription)
-
-    // Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]')
-    if (ogTitle) ogTitle.setAttribute('content', pageTitle)
-
-    const ogDescription = document.querySelector('meta[property="og:description"]')
-    if (ogDescription) ogDescription.setAttribute('content', shortDescription)
-
-    // Twitter tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]')
-    if (twitterTitle) twitterTitle.setAttribute('content', pageTitle)
-
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]')
-    if (twitterDescription) twitterDescription.setAttribute('content', shortDescription)
-  }, [])
-
   const navItems = [
     { label: 'Mission', href: '#mission' },
     { label: 'Objectives', href: '#objectives' },
@@ -124,11 +94,21 @@ function Home2() {
       <section className="hero" id="hero" aria-labelledby="hero-title">
         <div className="container">
           <div className="hero-content">
+            <p className="hero-eyebrow">Nonprofit · Health Equity · Nutrition</p>
             <h1 id="hero-title" className="hero-title">Global Aid Foundation</h1>
             <p className="hero-tagline">Nourishing Health. Transforming Lives.</p>
-            <a href="#mission" className="btn btn-primary btn-large">
-              Learn About Our Mission
-            </a>
+            <p className="hero-lede">
+              We advance health equity by addressing food insecurity, nutrition education,
+              and pathways to care for individuals with or at risk for diet-related chronic diseases.
+            </p>
+            <div className="hero-actions">
+              <a href="#mission" className="btn btn-primary btn-large">
+                Learn About Our Mission
+              </a>
+              <a href="#partner" className="btn btn-secondary btn-large">
+                Partner With Us
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -138,6 +118,7 @@ function Home2() {
         <div className="container">
           <article itemScope itemType="https://schema.org/Article">
             <header className="section-header">
+              <span className="section-eyebrow">Why we exist</span>
               <h2 id="mission-title" className="section-title" itemProp="headline">Our Mission</h2>
               <div className="accent-bar" aria-hidden="true"></div>
             </header>
@@ -165,6 +146,7 @@ function Home2() {
         <div className="container">
           <article itemScope itemType="https://schema.org/Article">
             <header className="section-header">
+              <span className="section-eyebrow">What we do</span>
               <h2 id="objectives-title" className="section-title" itemProp="headline">Our Objectives</h2>
               <div className="accent-bar" aria-hidden="true"></div>
               <p className="section-intro">We are committed to:</p>
@@ -186,6 +168,7 @@ function Home2() {
         <div className="container">
           <article itemScope itemType="https://schema.org/Article">
             <header className="section-header">
+              <span className="section-eyebrow">How we work</span>
               <h2 id="approach-title" className="section-title" itemProp="headline">Our Approach</h2>
               <div className="accent-bar" aria-hidden="true"></div>
             </header>
